@@ -9,7 +9,7 @@ const TRANSLATIONS = {
     yes: "> Great choice! <br> > I'm Rossi Lucas, a Junior Front-End Developer. <br> Type 'help' to see available commands.",
     help: "> Available commands: [about] [contact] [social] [certificates] [language] [clear] [restart]",
     about:
-      "> <strong>Executive Profile:</strong> <br> > Hi! I’m Lucas Rossi, a 19-year-old front-end developer passionate about programming. I currently work with technologies like HTML, CSS, JavaScript, TypeScript, and React, using Tailwind CSS to build modern, responsive interfaces. I also have experience with Node.js and am learning Express.js with PostgresSQL to move into full-stack developmer. My goal is to continue learning and apply my knowledge of databases and FastAPI to expand my skillset I’m working on my first projects and building my portfolio to showcase what I’m learning. I’m always looking to improve and take on new challenges to keep growing as a developer, and with my knowledges in python i want to learn automatisation with AI ",
+      "> <strong>Executive Profile:</strong> <br> > Hi! I`m Lucas Rossi, a 19-year-old front-end developer passionate about programming. I currently work with technologies like HTML, CSS, JavaScript, TypeScript, and React, using Tailwind CSS  to build modern responsive interfaces, and Git to manage my projects. I also have experience with Node.js and am learning Express.js with PostgresSQL to move into full-stack developmer. My goal is to continue learning and apply my knowledge of databases and FastAPI to expand my skillset. I’m always looking to improve and take on new challenges to keep growing as a developer, and with my knowledges in python i want to learn automatisations with AI ",
     contact:
       "> Contact: <br> > Email: <button onclick=\"window.handleSecureLink('email', 'mailto:lucassrossi12@gmail.com')\" class=\"underline text-yellow-400 cursor-pointer\">lucassrossi12@gmail.com</button> <br> > Phone: <button onclick=\"window.handleSecureLink('phone', 'tel:+543425594220')\" class=\"underline text-yellow-400 cursor-pointer\">+54 342 559-4220</button>",
     certificates:
@@ -27,7 +27,7 @@ const TRANSLATIONS = {
     yes: "> ¡Excelente elección! <br> > Soy Rossi Lucas, Desarrollador Front-End Junior. <br> Escribe 'help' para ver los comandos disponibles.",
     help: "> Comandos disponibles: [about] [contact] [social] [certificates] [language] [clear] [restart]",
     about:
-      "¡Hola! Soy Lucas Rossi, un desarrollador front-end de 19 años apasionado por la programación. Actualmente, trabajo con tecnologías como HTML, CSS, JavaScript, TypeScript y React, utilizando Tailwind CSS para crear interfaces modernas y responsivas. También tengo experiencia con Node.js y estoy aprendiendo Express.js para integrarme al desarrollo full-stack. Mi objetivo es seguir aprendiendo y aplicar mis conocimientos en bases de datos y FastAPI para mejorar mis habilidades. Estoy en mis primeros trabajos y creando mi portafolio, donde mostraré mis proyectos y todo lo que voy aprendiendo. Siempre busco mejorar y enfrentar nuevos desafíos para seguir creciendo como desarrollador, y con mi conocimiento en python me encantaria aprender sobre automatizaciones con IA's",
+      "¡Hola! Soy Lucas Rossi, un desarrollador front-end de 19 años apasionado por la programación. Actualmente, trabajo con tecnologías como HTML, CSS, JavaScript, TypeScript y React, utilizando Tailwind CSS para crear interfaces modernas y responsivas ademas de que tambien se Git para manejar mis projectos. También tengo experiencia con Node.js y estoy aprendiendo Express.js para integrarme al desarrollo full-stack. Mi objetivo es seguir aprendiendo y aplicar mis conocimientos en bases de datos y FastAPI para mejorar mis habilidades. Siempre busco mejorar y enfrentar nuevos desafíos para seguir creciendo como desarrollador, y con mi conocimiento en python me encantaria aprender sobre automatizaciones con IA's",
     contact:
       "> Contacto: <br> > Email: <button onclick=\"window.handleSecureLink('email', 'mailto:lucassrossi12@gmail.com')\" class=\"underline text-yellow-400 cursor-pointer\">lucassrossi12@gmail.com</button> <br> > Tel: <button onclick=\"window.handleSecureLink('phone', 'tel:+543425594220')\" class=\"underline text-yellow-400 cursor-pointer\">+54 342 559-4220</button>",
     certificates:
@@ -65,7 +65,6 @@ export default function TerminalInteracting() {
     setIsTyping(false);
   };
 
-  // Alerta para links
   globalWindow.handleSecureLink = (target: any) => {
     const msg =
       lang === "es"
@@ -78,7 +77,6 @@ export default function TerminalInteracting() {
     if (e.key === "Enter") {
       const val: any = inputValue.toLowerCase().trim();
 
-      // Lógica inicial para elegir idioma
       if (lang === null) {
         if (val === "es" || val === "en") {
           setLang(val);
@@ -87,7 +85,6 @@ export default function TerminalInteracting() {
           setHistory(["greet"]);
         }
       }
-      // Lógica de comandos generales
       else {
         if (val === "clear") setHistory(["yes"]);
         else if (val === "restart") {
@@ -118,7 +115,6 @@ export default function TerminalInteracting() {
 
   const renderStep = (step: string, index: number) => {
     const isLast = index === history.length - 1;
-    // Si aún no hay idioma, usamos 'en' por defecto para el greet inicial
     const currentTranslations: any = TRANSLATIONS[lang || "en"];
     const text = currentTranslations[step] || `> ${step}`;
 
