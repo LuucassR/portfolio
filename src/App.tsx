@@ -1,4 +1,5 @@
 import "./App.css";
+import ResumeComponent from "../components/Cv";
 import TypeStartInfo from "../components/typeStartInfo";
 import { useState, useEffect, useRef } from "react";
 import {
@@ -58,7 +59,7 @@ const RevealOnScroll = ({ children, delay = 0 }: any) => {
 // --- Secciones Principales ---
 
 // 1. Hero Section con efecto de escritura
-const Hero = ({ onScrollToDemo }: any) => {
+const Hero = ({ onScrollToDemo, onScrollToCv }: any) => {
   const [text, setText] = useState("");
   const fullText = "import { Portfolio } from './DevCreativo';";
 
@@ -88,7 +89,7 @@ const Hero = ({ onScrollToDemo }: any) => {
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
           Hola, soy
           <div className="mt-5">
-          <TypeStartInfo />
+            <TypeStartInfo />
           </div>
         </h1>
 
@@ -105,11 +106,8 @@ const Hero = ({ onScrollToDemo }: any) => {
         </div>
 
         <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-          Transformo ideas en experiencias web interactivas. Graduado de
-          <span className="text-white font-semibold mx-1">
-            The Odin Project
-          </span>
-          , especializado en crear interfaces limpias, rápidas y escalables.
+          Transformo ideas en experiencias web interactivas , especializado en
+          crear interfaces limpias, rápidas y escalables.
         </p>
 
         <div className="flex gap-4 justify-center">
@@ -118,7 +116,14 @@ const Hero = ({ onScrollToDemo }: any) => {
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all flex items-center gap-2 shadow-lg shadow-blue-500/25"
           >
             <Code size={20} />
-            Ver mis habilidades
+            Demos
+          </button>
+          <button
+            onClick={onScrollToCv}
+            className="bg-[#ff713e] hover:bg-[#ff581b] text-white px-8 py-3 rounded-lg font-medium transition-all flex items-center gap-2 shadow-lg shadow-[#ff581b]/50"
+          >
+            <Code size={20} />
+            CV
           </button>
           <a
             href="#contact"
@@ -140,7 +145,7 @@ const Hero = ({ onScrollToDemo }: any) => {
 // 2. Zona Interactiva (El corazón del portafolio)
 const InteractivePlayground = () => {
   const [btnColor, setBtnColor] = useState("blue");
-  const [btnSize, setBtnSize] = useState("md");
+  const [btnSize, setBtnSize] = useState("small");
   const [hasShadow, setHasShadow] = useState(true);
   const [clickCount, setClickCount] = useState(0);
 
@@ -156,9 +161,9 @@ const InteractivePlayground = () => {
 
   /** @type {Record<string, string>} */
   const sizes: Record<string, string> = {
-    sm: "px-3 py-1 text-sm",
-    md: "px-6 py-2 text-base",
-    lg: "px-8 py-4 text-lg",
+    small: "px-3 py-1 text-sm",
+    medium: "px-6 py-2 text-base",
+    large: "px-8 py-4 text-lg",
   };
 
   const codeString = `
@@ -178,12 +183,11 @@ const InteractivePlayground = () => {
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
               <Zap className="text-yellow-400" />
-              Demo Interactiva de React
+              Simple Demo Interactiva de React
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
-              No solo digo que sé React, aquí puedes verlo en acción. Interactúa
-              con los controles para cambiar el estado del componente y observa
-              cómo el código se actualiza en tiempo real.
+              Interactúa con los controles para cambiar el estado del componente
+              y observa cómo el código se actualiza en tiempo real.
             </p>
           </div>
         </RevealOnScroll>
@@ -194,13 +198,13 @@ const InteractivePlayground = () => {
             <div className="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-xl">
               <h3 className="text-white font-semibold mb-6 flex items-center gap-2">
                 <Layers size={18} className="text-blue-400" />
-                Configuración (Props & State)
+                Configuración del boton
               </h3>
 
               <div className="space-y-6">
                 <div>
                   <label className="text-slate-400 text-sm mb-2 block">
-                    Color (Prop)
+                    Color
                   </label>
                   <div className="flex gap-2">
                     {Object.keys(colors).map((c) => (
@@ -229,7 +233,7 @@ const InteractivePlayground = () => {
 
                 <div>
                   <label className="text-slate-400 text-sm mb-2 block">
-                    Tamaño (Prop)
+                    Tamaño
                   </label>
                   <div className="flex bg-slate-900 rounded-lg p-1 w-fit">
                     {Object.keys(sizes).map((s) => (
@@ -262,7 +266,7 @@ const InteractivePlayground = () => {
                     />
                   </div>
                   <label className="text-slate-300 text-sm">
-                    Sombra Activada (Boolean)
+                    Sombra Activada
                   </label>
                 </div>
               </div>
@@ -298,7 +302,7 @@ const InteractivePlayground = () => {
                   <div className="w-3 h-3 rounded-full bg-green-500" />
                 </div>
                 <span className="ml-2 text-xs text-slate-400 font-mono">
-                  ComponentPreview.jsx
+                  ExmapleComponentPreview.jsx
                 </span>
               </div>
               <div className="p-6 overflow-x-auto flex-1 font-mono text-sm relative group">
@@ -328,6 +332,19 @@ const InteractivePlayground = () => {
   );
 };
 
+const Cv = () => {
+  return (
+    <section
+      id="cv"
+      className="py-20 px-4 bg-linear-to-t from-slate-700/70 to-bg-slate-900/50 relative overflow-hidden"
+    >
+      <RevealOnScroll delay={200}>
+        <ResumeComponent />
+      </RevealOnScroll>
+    </section>
+  );
+};
+
 // 4. Sección de Contacto
 const Contact = () => (
   <section
@@ -343,9 +360,11 @@ const Contact = () => (
           ¿Creamos algo increíble?
         </h2>
         <p className="text-slate-400 text-lg mb-10">
-          Estoy buscando nuevas oportunidades como Desarrollador Front-End. Si
-          tienes un proyecto en mente o simplemente quieres charlar sobre
-          tecnología, contáctame.
+          Estoy buscando nuevas oportunidades como Desarrollador Front-End.
+          <br></br>
+          Tenes un pryecto en mente?
+          <br></br>
+          Contáctame.
         </p>
 
         <div className="grid sm:grid-cols-2 gap-4 max-w-lg mx-auto">
@@ -428,6 +447,12 @@ export default function App() {
               Playground
             </button>
             <button
+              onClick={() => scrollToSection("cv")}
+              className="hover:text-blue-400 transition-colors hidden md:block"
+            >
+              CV
+            </button>
+            <button
               onClick={() => scrollToSection("contact")}
               className="hover:text-blue-400 transition-colors"
             >
@@ -441,6 +466,7 @@ export default function App() {
       <main>
         <Hero onScrollToDemo={() => scrollToSection("demo")} />
         <InteractivePlayground />
+        <Cv />
         <Contact />
       </main>
 
