@@ -29,7 +29,7 @@ const TRANSLATIONS = {
     about:
       "¡Hola! Soy Lucas Rossi, un desarrollador front-end de 19 años apasionado por la programación. Actualmente, trabajo con tecnologías como HTML, CSS, JavaScript, TypeScript y React, utilizando Tailwind CSS para crear interfaces modernas y responsivas ademas de que tambien se Git para manejar mis projectos. También tengo experiencia con Node.js y estoy aprendiendo Express.js para integrarme al desarrollo full-stack. Mi objetivo es seguir aprendiendo y aplicar mis conocimientos en bases de datos y FastAPI para mejorar mis habilidades. Siempre busco mejorar y enfrentar nuevos desafíos para seguir creciendo como desarrollador, y con mi conocimiento en python me encantaria aprender sobre automatizaciones con IA's",
     contact:
-      "> Contacto: <br> > Email: <button onclick=\"window.handleSecureLink('email', 'mailto:lucassrossi12@gmail.com')\" class=\"underline text-yellow-400 cursor-pointer\">lucassrossi12@gmail.com</button> <br> > Tel: <button onclick=\"window.handleSecureLink('phone', 'tel:+543425594220')\" class=\"underline text-yellow-400 cursor-pointer\">+54 342 559-4220</button>",
+      "> Contacto: <br> > Email: <button onclick=\"window.handleSecureLink('mailto:lucassrossi12@gmail.com')\" class=\"underline text-yellow-400 cursor-pointer\">lucassrossi12@gmail.com</button> <br> > Tel: <button onclick=\"window.handleSecureLink('tel:+543425594220')\" class=\"underline text-yellow-400 cursor-pointer\">+54 342 559-4220</button>",
     certificates:
       '<span class="text-blue-400"># Conectando a postgres_db...</span><br> > 1. CS50P (Python) <br> > 2. CS50 SQL <br> > 3. CS50X (Ciencias de la Computación)',
     language:
@@ -65,12 +65,12 @@ export default function TerminalInteracting() {
     setIsTyping(false);
   };
 
-  globalWindow.handleSecureLink = (target: any) => {
+  globalWindow.handleSecureLink = (url: any) => {
     const msg =
       lang === "es"
         ? "¿Abrir aplicación externa?"
         : "Open external application?";
-    if (window.confirm(msg)) window.location.href = target;
+    if (window.confirm(msg)) window.location.href = url;
   };
 
   const handleKeyDown = (e: any) => {
