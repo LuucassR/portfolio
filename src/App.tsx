@@ -100,7 +100,7 @@ const Hero = ({ onScrollToDemo, onScrollToCv }: any) => {
             <br className="md:hidden" /> role:{" "}
             <span className="text-green-300">'Front-End'</span>,
             <br className="md:hidden" /> stack:{" "}
-            <span className="text-green-300">['React', 'Tailwind']</span>
+            <span className="text-green-300">['React', 'Tailwind', ...]</span>
             <span className="text-yellow-300">{"}"}</span>;
           </code>
         </div>
@@ -113,14 +113,14 @@ const Hero = ({ onScrollToDemo, onScrollToCv }: any) => {
         <div className="flex gap-4 justify-center">
           <button
             onClick={onScrollToDemo}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all flex items-center gap-2 shadow-lg shadow-blue-500/25"
+            className="bg-blue-600 hover:bg-blue-700 cursor-pointer text-white px-8 py-3 rounded-lg font-medium transition-all flex items-center gap-2 shadow-lg shadow-blue-500/25"
           >
             <Code size={20} />
             Demos
           </button>
           <button
             onClick={onScrollToCv}
-            className="bg-[#ff713e] hover:bg-[#ff581b] text-white px-8 py-3 rounded-lg font-medium transition-all flex items-center gap-2 shadow-lg shadow-[#ff581b]/50"
+            className="bg-[#ff713e] cursor-pointer hover:bg-[#ff581b] text-white px-8 py-3 rounded-lg font-medium transition-all flex items-center gap-2 shadow-lg shadow-[#ff581b]/50"
           >
             <Code size={20} />
             CV
@@ -464,7 +464,7 @@ export default function App() {
 
       {/* Contenido Principal */}
       <main>
-        <Hero onScrollToDemo={() => scrollToSection("demo")} />
+        <Hero onScrollToDemo={() => scrollToSection("demo")} onScrollToCv={() => scrollToSection("cv")} />
         <InteractivePlayground />
         <Cv />
         <Contact />
