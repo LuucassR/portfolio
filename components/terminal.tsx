@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Typewriter from "typewriter-effect";
+const globalWindow = window as unknown as Record<string, any>;
 
 const TRANSLATIONS = {
   en: {
@@ -15,7 +16,8 @@ const TRANSLATIONS = {
       '<span class="text-blue-400"># Connecting to postgres_db...</span><br> > 1. CS50P (Python) <br> > 2. CS50 SQL <br> > 3. CS50X (Computer Science)',
     language:
       '<span class="text-blue-400"># Querying languages...</span><br> > <span class="text-yellow-400">Spanish:</span> Native / Bilingual <br> > <span class="text-yellow-400">English:</span> Advanced Professional Command',
-    social: "> GitHub: https://github.com/LuucassR <br> > LinkedIn: https://www.linkedin.com/in/lucas-rossi-052926389/",
+    social:
+      "> GitHub: https://github.com/LuucassR <br> > LinkedIn: https://www.linkedin.com/in/lucas-rossi-052926389/",
     error: "> Command not found. Type 'help'.",
     no: "> Feel free to explore. Type 'help'.",
   },
@@ -32,7 +34,8 @@ const TRANSLATIONS = {
       '<span class="text-blue-400"># Conectando a postgres_db...</span><br> > 1. CS50P (Python) <br> > 2. CS50 SQL <br> > 3. CS50X (Ciencias de la Computación)',
     language:
       '<span class="text-blue-400"># Consultando idiomas...</span><br> > <span class="text-yellow-400">Español:</span> Nativo / Bilingüe <br> > <span class="text-yellow-400">Inglés:</span> Dominio Profesional Avanzado (Advanced Professional Command)',
-    social: "> GitHub: https://github.com/LuucassR <br> > LinkedIn: https://www.linkedin.com/in/lucas-rossi-052926389/",
+    social:
+      "> GitHub: https://github.com/LuucassR <br> > LinkedIn: https://www.linkedin.com/in/lucas-rossi-052926389/",
     error: "> Comando no encontrado. Escribe 'help'.",
     no: "> Explora con libertad. Escribe 'help'.",
   },
@@ -52,16 +55,18 @@ export default function TerminalInteracting() {
 
   const cleanAllCursors = () => {
     const cursors = document.querySelectorAll(".Typewriter__cursor");
-    cursors.forEach((c) => {
-      c.style.display = "none";
-      c.style.opacity = "0";
+    cursors.forEach((c: any) => {
+      if (c) {
+        c.style.display = "none";
+        c.style.opacity = "0";
+      }
       c.classList.remove("Typewriter__cursor"); // Evita que se vuelvan a encontrar
     });
     setIsTyping(false);
   };
 
   // Alerta para links
-  window.handleSecureLink = (type, target) => {
+  globalWindow.handleSecureLink = (target: any) => {
     const msg =
       lang === "es"
         ? "¿Abrir aplicación externa?"
@@ -69,9 +74,9 @@ export default function TerminalInteracting() {
     if (window.confirm(msg)) window.location.href = target;
   };
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: any) => {
     if (e.key === "Enter") {
-      const val = inputValue.toLowerCase().trim();
+      const val: any = inputValue.toLowerCase().trim();
 
       // Lógica inicial para elegir idioma
       if (lang === null) {
@@ -111,10 +116,10 @@ export default function TerminalInteracting() {
     }
   };
 
-  const renderStep = (step, index) => {
+  const renderStep = (step: string, index: number) => {
     const isLast = index === history.length - 1;
     // Si aún no hay idioma, usamos 'en' por defecto para el greet inicial
-    const currentTranslations = TRANSLATIONS[lang || "en"];
+    const currentTranslations: any = TRANSLATIONS[lang || "en"];
     const text = currentTranslations[step] || `> ${step}`;
 
     return (

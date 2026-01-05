@@ -1,5 +1,5 @@
 import "./App.css";
-import TerminalInteracting from "../components/startWriter.jsx";
+import TerminalInteracting from "../components/terminal"
 
 export default function App() {
   return (
