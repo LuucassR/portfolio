@@ -43,7 +43,7 @@ const ResumeComponent = () => {
     contact: {
       email: "lucassrossi12@gmail.com",
       phone: "+54 342 559-4220",
-      linkedin: "linkedin.com/in/lucas-rossi-052926389/",
+      linkedin: "/lucas-rossi-052926389",
     },
     education: [
       {
@@ -119,8 +119,8 @@ const ResumeComponent = () => {
             <Type text={data.title} delay={500} />
           </p>
         </div>
-        <div className="text-right space-y-1 text-sm text-gray-600">
-          <div className="flex items-center justify-end gap-3">
+        <div className="flex flex-col space-y-1 text-sm w-full text-gray-600">
+          <div className="flex items-center justify-end center gap-3">
             <a
               className="text-slate-900 text-lg font-medium transition-all duration-300 border-b border-transparent hover:border-slate-900 hover:text-black"
               href="mailto:lucassrossi12@gmail.com?"
@@ -152,9 +152,8 @@ const ResumeComponent = () => {
       </div>
 
       <div className="flex flex-col gap-8">
-        {/* COLUMNA IZQUIERDA */}
-        <div className="flex flex-col space-y-12">
-          <section className="justify-center">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap sm:gap-5 space-y-12">
+          <section>
             <h2 className="text-2xl font-bold tracking-[0.15em] border-b border-gray-300 pb-1 mb-4 text-gray-400">
               EDUCACION
             </h2>
@@ -239,7 +238,6 @@ const ResumeComponent = () => {
           </section>
         </div>
 
-        {/* COLUMNA DERECHA */}
         <div className="space-y-10">
           <section>
             <h2 className="text-2xl font-bold tracking-[0.15em] border-b border-gray-300 pb-1 mb-4 text-gray-600">

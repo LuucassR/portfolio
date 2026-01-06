@@ -14,7 +14,7 @@ import {
   Layers,
   Zap,
   Newspaper,
-  Send
+  Send,
 } from "lucide-react";
 
 // Hook para detectar cuando un elemento entra en el viewport (Scroll Reveal)
@@ -124,7 +124,7 @@ const Hero = ({ onScrollToDemo, onScrollToCv }: any) => {
             onClick={onScrollToCv}
             className="bg-[#ff713e] max-w-fit sm:max-w-screen justify-center cursor-pointer hover:bg-[#ff581b] text-center text-white px-8 py-3 rounded-lg font-medium transition-all flex items-center gap-2 shadow-lg shadow-[#ff581b]/50"
           >
-            <Newspaper size={18}/>
+            <Newspaper size={18} />
             <p>Cv</p>
           </button>
           <a
@@ -151,9 +151,6 @@ const InteractivePlayground = () => {
   const [hasShadow, setHasShadow] = useState(true);
   const [clickCount, setClickCount] = useState(0);
 
-  // Mapeo de estilos para Tailwind
-  // Usamos JSDoc para definir el tipo y evitar errores de indexación en TS/Linters
-  /** @type {Record<string, string>} */
   const colors: Record<string, string> = {
     blue: "bg-blue-500 hover:bg-blue-600",
     emerald: "bg-emerald-500 hover:bg-emerald-600",
@@ -161,59 +158,42 @@ const InteractivePlayground = () => {
     rose: "bg-rose-500 hover:bg-rose-600",
   };
 
-  /** @type {Record<string, string>} */
   const sizes: Record<string, string> = {
     small: "px-3 py-1 text-sm",
     medium: "px-6 py-2 text-base",
     large: "px-8 py-4 text-lg",
   };
 
-  const codeString = `
-<Button
-  color="${btnColor}"
-  size="${btnSize}"
-  shadow={${hasShadow}}
-  onClick={() => count + 1}
->
-  Clicks: ${clickCount}
-</Button>`;
-
   return (
-    <section id="demo" className="py-20 px-4 bg-slate-900/50">
+    <section id="demo" className="py-20 px-6 bg-slate-900/50">
       <div className="max-w-6xl mx-auto">
         <RevealOnScroll>
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center justify-center gap-3">
               <Zap className="text-yellow-400" />
-              Simple Demo Interactiva de React
+              Playground React
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              Interactúa con los controles para cambiar el estado del componente
-              y observa cómo el código se actualiza en tiempo real.
-            </p>
           </div>
         </RevealOnScroll>
 
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-          {/* Panel de Control */}
+        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
           <RevealOnScroll delay={200}>
-            <div className="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-xl">
+            <div className="bg-slate-800 p-6 rounded-xl border border-slate-700 h-full">
               <h3 className="text-white font-semibold mb-6 flex items-center gap-2">
-                <Layers size={18} className="text-blue-400" />
-                Configuración del boton
+                <Layers size={18} className="text-blue-400" /> Configuración
               </h3>
 
               <div className="space-y-6">
                 <div>
-                  <label className="text-slate-400 text-sm mb-2 block">
+                  <label className="text-slate-400 text-sm mb-3 block">
                     Color
                   </label>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {Object.keys(colors).map((c) => (
                       <button
                         key={c}
                         onClick={() => setBtnColor(c)}
-                        className={`w-8 h-8 rounded-full border-2 transition-all ${
+                        className={`w-10 h-10 rounded-full border-2 transition-all ${
                           btnColor === c
                             ? "border-white scale-110"
                             : "border-transparent opacity-50"
@@ -234,18 +214,18 @@ const InteractivePlayground = () => {
                 </div>
 
                 <div>
-                  <label className="text-slate-400 text-sm mb-2 block">
+                  <label className="text-slate-400 text-sm mb-3 block">
                     Tamaño
                   </label>
-                  <div className="flex bg-slate-900 rounded-lg p-1 w-fit">
+                  <div className="flex bg-slate-900 rounded-lg p-1 w-full sm:w-fit">
                     {Object.keys(sizes).map((s) => (
                       <button
                         key={s}
                         onClick={() => setBtnSize(s)}
-                        className={`px-4 py-1 rounded-md text-sm transition-all ${
+                        className={`flex-1 sm:flex-none px-4 py-2 rounded-md text-xs font-bold transition-all ${
                           btnSize === s
                             ? "bg-slate-700 text-white"
-                            : "text-slate-500 hover:text-slate-300"
+                            : "text-slate-500"
                         }`}
                       >
                         {s.toUpperCase()}
@@ -254,7 +234,7 @@ const InteractivePlayground = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 pt-2">
                   <div
                     onClick={() => setHasShadow(!hasShadow)}
                     className={`w-12 h-6 rounded-full p-1 cursor-pointer transition-colors ${
@@ -262,31 +242,23 @@ const InteractivePlayground = () => {
                     }`}
                   >
                     <div
-                      className={`w-4 h-4 bg-white rounded-full shadow-md transform transition-transform ${
+                      className={`w-4 h-4 bg-white rounded-full transition-transform ${
                         hasShadow ? "translate-x-6" : "translate-x-0"
                       }`}
                     />
                   </div>
-                  <label className="text-slate-300 text-sm">
-                    Sombra Activada
-                  </label>
+                  <label className="text-slate-300 text-sm">Sombra</label>
                 </div>
               </div>
 
-              {/* Área de Renderizado */}
-              <div className="mt-8 p-8 bg-slate-900/50 rounded-lg border border-dashed border-slate-700 flex flex-col items-center justify-center gap-4 min-h-40">
-                <p className="text-slate-500 text-xs mb-2">
-                  Vista Previa del Componente:
-                </p>
+              <div className="mt-8 p-10 bg-slate-900/50 rounded-lg border border-dashed border-slate-700 flex flex-col items-center justify-center gap-4">
                 <button
                   onClick={() => setClickCount((p) => p + 1)}
-                  className={`
-                    text-white font-semibold rounded-lg transition-all duration-300
-                    ${colors[btnColor]}
-                    ${sizes[btnSize]}
-                    ${hasShadow ? "shadow-lg shadow-current" : ""}
-                    active:scale-95
-                  `}
+                  className={`text-white font-semibold rounded-lg transition-all duration-300 ${
+                    colors[btnColor]
+                  } ${sizes[btnSize]} ${
+                    hasShadow ? "shadow-lg shadow-blue-500/20" : ""
+                  }`}
                 >
                   Clicks: {clickCount}
                 </button>
@@ -294,7 +266,6 @@ const InteractivePlayground = () => {
             </div>
           </RevealOnScroll>
 
-          {/* Panel de Código */}
           <RevealOnScroll delay={400}>
             <div className="bg-[#1e1e1e] rounded-xl overflow-hidden shadow-2xl border border-slate-800 h-full flex flex-col">
               <div className="bg-[#2d2d2d] px-4 py-2 flex items-center gap-2 border-b border-black/20">
@@ -320,9 +291,27 @@ const InteractivePlayground = () => {
                     <span className="text-blue-300">useState</span>({clickCount}
                     );{"\n\n"}
                     {"  "}return ({"\n"}
-                    <span className="text-blue-300"> {codeString}</span>
-                    {"\n  "});{"\n"}
-                    {"}"};
+                    <span className="text-blue-300"> {`   <Button`}</span>
+                    {"\n"}
+                    <span className="text-blue-300">
+                      {`     color="${btnColor}"`}
+                      {"\n"}
+                      {`     size="${btnSize}`}
+                      {"\n"}
+                      {`     shadow="${hasShadow}"`}
+                      {"\n"}
+                      {`     "onClick={(prevCopunt) => prevCount + 1}`}
+                      {"\n"}
+                      {"    >"}
+                      {"\n"}
+                      {`     Clicks: ${clickCount}`}
+                      {"\n"}
+                      {"    </Button>"}
+                      {"\n   "});
+                      {"\n"}
+                      {"};"}
+                      
+                    </span>
                   </code>
                 </pre>
               </div>
@@ -358,10 +347,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_kyx6uok",   // Reemplaza con el tuyo
-        "template_y5ay96r",  // Reemplaza con el tuyo
+        "service_kyx6uok", // Reemplaza con el tuyo
+        "template_y5ay96r", // Reemplaza con el tuyo
         form.current,
-        "TsFTR12HDnn6acXuL"    // Reemplaza con el tuyo
+        "TsFTR12HDnn6acXuL" // Reemplaza con el tuyo
       )
       .then(
         () => {
@@ -376,17 +365,26 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 bg-linear-to-t from-black to-slate-900 relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-20 px-4 bg-linear-to-t from-black to-slate-900 relative overflow-hidden"
+    >
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl bg-blue-500/5 blur-3xl pointer-events-none rounded-full"></div>
 
       <div className="max-w-3xl mx-auto text-center relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">¿Creamos algo increíble?</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          ¿Creamos algo increíble?
+        </h2>
         <p className="text-slate-400 text-lg mb-10">
           Tenes un proyecto en mente? Contáctame.
         </p>
 
         {/* Formulario mejorado */}
-        <form ref={form} onSubmit={sendEmail} className="max-w-md mx-auto space-y-4 mb-12">
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          className="max-w-md mx-auto space-y-4 mb-12"
+        >
           <input
             type="text"
             name="user_name"
@@ -409,22 +407,34 @@ const Contact = () => {
             rows="4"
             className="w-full bg-slate-800/50 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
           />
-          
+
           <button
             type="submit"
             disabled={status === "enviando"}
             className="w-full flex items-center justify-center gap-3 bg-blue-600 text-white px-6 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all disabled:opacity-50"
           >
-            {status === "enviando" ? "Enviando..." : <><Send size={20} /> Enviar Mensaje</>}
+            {status === "enviando" ? (
+              "Enviando..."
+            ) : (
+              <>
+                <Send size={20} /> Enviar Mensaje
+              </>
+            )}
           </button>
 
-          {status === "exito" && <p className="text-green-400 mt-2">¡Mensaje enviado con éxito!</p>}
-          {status === "error" && <p className="text-red-400 mt-2">Hubo un error, intenta de nuevo.</p>}
+          {status === "exito" && (
+            <p className="text-green-400 mt-2">¡Mensaje enviado con éxito!</p>
+          )}
+          {status === "error" && (
+            <p className="text-red-400 mt-2">
+              Hubo un error, intenta de nuevo.
+            </p>
+          )}
         </form>
 
         {/* Tus enlaces originales como respaldo */}
         <div className="flex flex-wrap justify-center gap-4 max-w-lg mx-auto">
-           <a
+          <a
             href="https://wa.me/3425594220"
             target="_blank"
             rel="noopener noreferrer"
@@ -433,13 +443,19 @@ const Contact = () => {
             <Smartphone size={20} /> WhatsApp
           </a>
         </div>
-        
+
         {/* Redes Sociales */}
         <div className="mt-12 flex justify-center gap-8 border-t border-slate-800 pt-8">
-          <a href="https://github.com/LuucassR" className="text-slate-500 hover:text-white transition-colors">
+          <a
+            href="https://github.com/LuucassR"
+            className="text-slate-500 hover:text-white transition-colors"
+          >
             <Github size={24} />
           </a>
-          <a href="https://www.linkedin.com/in/lucas-rossi-052926389/" className="text-slate-500 hover:text-white transition-colors">
+          <a
+            href="https://www.linkedin.com/in/lucas-rossi-052926389/"
+            className="text-slate-500 hover:text-white transition-colors"
+          >
             <Linkedin size={24} />
           </a>
         </div>
@@ -501,7 +517,10 @@ export default function App() {
 
       {/* Contenido Principal */}
       <main>
-        <Hero onScrollToDemo={() => scrollToSection("demo")} onScrollToCv={() => scrollToSection("cv")} />
+        <Hero
+          onScrollToDemo={() => scrollToSection("demo")}
+          onScrollToCv={() => scrollToSection("cv")}
+        />
         <InteractivePlayground />
         <Cv />
         <Contact />
@@ -512,7 +531,7 @@ export default function App() {
         <p>
           &copy; {new Date().getFullYear()} Creado con React & Tailwind.
           Inspirado en The Odin Project. <br />
-           --- By Rossi Lucas ---
+          --- By Rossi Lucas ---
         </p>
       </footer>
     </div>
