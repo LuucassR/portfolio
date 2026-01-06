@@ -165,48 +165,39 @@ const InteractivePlayground = () => {
   };
 
   return (
-    <section id="demo" className="py-20 px-6 bg-slate-900/50">
+    <section id="demo" className="py-10 md:py-20 px-4 md:px-6 bg-slate-900/50">
       <div className="max-w-6xl mx-auto">
         <RevealOnScroll>
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+          <div className="mb-8 md:mb-12 text-center">
+            <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 flex items-center justify-center gap-3">
               <Zap className="text-yellow-400" />
               Playground React
             </h2>
           </div>
         </RevealOnScroll>
 
-        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+        {/* Cambio a 1 columna en móvil y 2 en desktop (lg) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-stretch">
           <RevealOnScroll delay={200}>
-            <div className="bg-slate-800 p-6 rounded-xl border border-slate-700 h-full">
+            <div className="bg-slate-800 p-5 md:p-6 rounded-xl border border-slate-700 h-full">
               <h3 className="text-white font-semibold mb-6 flex items-center gap-2">
                 <Layers size={18} className="text-blue-400" /> Configuración
               </h3>
 
               <div className="space-y-6">
                 <div>
-                  <label className="text-slate-400 text-sm mb-3 block">
-                    Color
-                  </label>
+                  <label className="text-slate-400 text-sm mb-3 block">Color</label>
                   <div className="flex flex-wrap gap-3">
                     {Object.keys(colors).map((c) => (
                       <button
                         key={c}
                         onClick={() => setBtnColor(c)}
-                        className={`w-10 h-10 rounded-full border-2 transition-all ${
-                          btnColor === c
-                            ? "border-white scale-110"
-                            : "border-transparent opacity-50"
+                        className={`w-9 h-9 md:w-10 md:h-10 rounded-full border-2 transition-all ${
+                          btnColor === c ? "border-white scale-110" : "border-transparent opacity-50"
                         }`}
                         style={{
                           backgroundColor:
-                            c === "blue"
-                              ? "#3b82f6"
-                              : c === "emerald"
-                              ? "#10b981"
-                              : c === "purple"
-                              ? "#a855f7"
-                              : "#f43f5e",
+                            c === "blue" ? "#3b82f6" : c === "emerald" ? "#10b981" : c === "purple" ? "#a855f7" : "#f43f5e",
                         }}
                       />
                     ))}
@@ -214,18 +205,15 @@ const InteractivePlayground = () => {
                 </div>
 
                 <div>
-                  <label className="text-slate-400 text-sm mb-3 block">
-                    Tamaño
-                  </label>
+                  <label className="text-slate-400 text-sm mb-3 block">Tamaño</label>
+                  {/* Botones se estiran en móvil para ser más táctiles */}
                   <div className="flex bg-slate-900 rounded-lg p-1 w-full sm:w-fit">
                     {Object.keys(sizes).map((s) => (
                       <button
                         key={s}
                         onClick={() => setBtnSize(s)}
-                        className={`flex-1 sm:flex-none px-4 py-2 rounded-md text-xs font-bold transition-all ${
-                          btnSize === s
-                            ? "bg-slate-700 text-white"
-                            : "text-slate-500"
+                        className={`flex-1 sm:flex-none px-3 md:px-4 py-2 rounded-md text-xs font-bold transition-all ${
+                          btnSize === s ? "bg-slate-700 text-white" : "text-slate-500"
                         }`}
                       >
                         {s.toUpperCase()}
@@ -237,28 +225,21 @@ const InteractivePlayground = () => {
                 <div className="flex items-center gap-3 pt-2">
                   <div
                     onClick={() => setHasShadow(!hasShadow)}
-                    className={`w-12 h-6 rounded-full p-1 cursor-pointer transition-colors ${
-                      hasShadow ? "bg-blue-500" : "bg-slate-700"
-                    }`}
+                    className={`w-12 h-6 rounded-full p-1 cursor-pointer transition-colors ${hasShadow ? "bg-blue-500" : "bg-slate-700"}`}
                   >
-                    <div
-                      className={`w-4 h-4 bg-white rounded-full transition-transform ${
-                        hasShadow ? "translate-x-6" : "translate-x-0"
-                      }`}
-                    />
+                    <div className={`w-4 h-4 bg-white rounded-full transition-transform ${hasShadow ? "translate-x-6" : "translate-x-0"}`} />
                   </div>
                   <label className="text-slate-300 text-sm">Sombra</label>
                 </div>
               </div>
 
-              <div className="mt-8 p-10 bg-slate-900/50 rounded-lg border border-dashed border-slate-700 flex flex-col items-center justify-center gap-4">
+              {/* Ajuste de padding en vista previa para que no desborde el botón */}
+              <div className="mt-8 p-6 md:p-10 bg-slate-900/50 rounded-lg border border-dashed border-slate-700 flex flex-col items-center justify-center min-h-[150px]">
                 <button
                   onClick={() => setClickCount((p) => p + 1)}
-                  className={`text-white font-semibold rounded-lg transition-all duration-300 ${
+                  className={`text-white font-semibold rounded-lg transition-all duration-300 break-words max-w-full ${
                     colors[btnColor]
-                  } ${sizes[btnSize]} ${
-                    hasShadow ? "shadow-lg shadow-blue-500/20" : ""
-                  }`}
+                  } ${sizes[btnSize]} ${hasShadow ? "shadow-lg shadow-blue-500/20" : ""}`}
                 >
                   Clicks: {clickCount}
                 </button>
@@ -268,50 +249,43 @@ const InteractivePlayground = () => {
 
           <RevealOnScroll delay={400}>
             <div className="bg-[#1e1e1e] rounded-xl overflow-hidden shadow-2xl border border-slate-800 h-full flex flex-col">
-              <div className="bg-[#2d2d2d] px-4 py-2 flex items-center gap-2 border-b border-black/20">
+              <div className="bg-[#2d2d2d] px-4 py-3 flex items-center gap-2 border-b border-black/20">
                 <div className="flex gap-1.5">
                   <div className="w-3 h-3 rounded-full bg-red-500" />
                   <div className="w-3 h-3 rounded-full bg-yellow-500" />
                   <div className="w-3 h-3 rounded-full bg-green-500" />
                 </div>
-                <span className="ml-2 text-xs text-slate-400 font-mono">
+                <span className="ml-2 text-[10px] md:text-xs text-slate-400 font-mono truncate">
                   ExmapleComponentPreview.jsx
                 </span>
               </div>
-              <div className="p-6 overflow-x-auto flex-1 font-mono text-sm relative group">
-                <div className="absolute top-4 right-4 text-xs bg-slate-800 text-slate-400 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                  Solo lectura
-                </div>
-                <pre>
+              <div className="p-4 md:p-6 overflow-x-auto flex-1 font-mono text-[11px] md:text-sm relative group">
+                <pre className="leading-relaxed">
                   <code className="text-gray-300">
                     <span className="text-purple-400">const</span>{" "}
-                    <span className="text-yellow-300">DemoComponent</span> = ()
-                    ={">"} {"{"} {"\n"}
+                    <span className="text-yellow-300">DemoComponent</span> = () ={">"} {"{"} {"\n"}
                     {"  "}const [count, setCount] ={" "}
-                    <span className="text-blue-300">useState</span>({clickCount}
-                    );{"\n\n"}
+                    <span className="text-blue-300">useState</span>({clickCount});{"\n\n"}
                     {"  "}return ({"\n"}
-                    <span className="text-blue-300"> {`   <Button`}</span>
-                    {"\n"}
                     <span className="text-blue-300">
-                      {`     color="${btnColor}"`}
+                      {`    <Button`}
                       {"\n"}
-                      {`     size="${btnSize}`}
+                      {`      color="${btnColor}"`}
                       {"\n"}
-                      {`     shadow="${hasShadow}"`}
+                      {`      size="${btnSize}"`}
                       {"\n"}
-                      {`     "onClick={(prevCopunt) => prevCount + 1}`}
+                      {`      shadow="${hasShadow}"`}
                       {"\n"}
-                      {"    >"}
+                      {`      onClick={() => setCount(count + 1)}`}
                       {"\n"}
-                      {`     Clicks: ${clickCount}`}
+                      {`    >`}
                       {"\n"}
-                      {"    </Button>"}
-                      {"\n   "});
+                      {`      Clicks: {count}`}
                       {"\n"}
-                      {"};"}
-                      
+                      {`    </Button>`}
                     </span>
+                    {"\n  "});{"\n"}
+                    {"};"}
                   </code>
                 </pre>
               </div>
@@ -481,10 +455,6 @@ export default function App() {
       <nav className="fixed top-0 w-full bg-slate-950/80 backdrop-blur-md border-b border-white/5 z-50 px-4 md:px-8 py-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="text-xl font-bold text-white flex items-center gap-2">
-            <Terminal size={24} className="text-blue-500" />
-            <span>
-              Dev<span className="text-blue-500">Portafolio</span>
-            </span>
           </div>
           <div className="flex gap-6 text-sm font-medium">
             <button
