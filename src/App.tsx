@@ -5,7 +5,6 @@ import emailjs from "@emailjs/browser";
 import { useState, useEffect, useRef } from "react";
 import {
   Code,
-  Terminal,
   Github,
   Linkedin,
   Mail,
@@ -234,10 +233,10 @@ const InteractivePlayground = () => {
               </div>
 
               {/* Ajuste de padding en vista previa para que no desborde el botón */}
-              <div className="mt-8 p-6 md:p-10 bg-slate-900/50 rounded-lg border border-dashed border-slate-700 flex flex-col items-center justify-center min-h-[150px]">
+              <div className="mt-8 p-6 md:p-10 bg-slate-900/50 rounded-lg border border-dashed border-slate-700 flex flex-col items-center justify-center min-h-37.5">
                 <button
                   onClick={() => setClickCount((p) => p + 1)}
-                  className={`text-white font-semibold rounded-lg transition-all duration-300 break-words max-w-full ${
+                  className={`text-white font-semibold rounded-lg transition-all duration-300 wrap-break-word max-w-full ${
                     colors[btnColor]
                   } ${sizes[btnSize]} ${hasShadow ? "shadow-lg shadow-blue-500/20" : ""}`}
                 >
