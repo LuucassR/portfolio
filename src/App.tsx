@@ -136,9 +136,6 @@ const Hero = ({ onScrollToDemo, onScrollToCv }: any) => {
         </div>
       </div>
 
-      <div className="absolute bottom-5 animate-bounce text-slate-500">
-        <ChevronDown size={32} />
-      </div>
     </section>
   );
 };
