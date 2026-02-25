@@ -1,0 +1,455 @@
+{
+  "picture": {
+    "hidden": true,
+    "url": "",
+    "size": 80,
+    "rotation": 0,
+    "aspectRatio": 1,
+    "borderRadius": 0,
+    "borderColor": "rgba(0, 0, 0, 0.5)",
+    "borderWidth": 0,
+    "shadowColor": "rgba(0, 0, 0, 0.5)",
+    "shadowWidth": 0
+  },
+  "basics": {
+    "name": "Lucas Rossi",
+    "headline": "Junior Full-Stack Developer",
+    "email": "lucassrossi12@gmail.com",
+    "phone": "3425594220",
+    "location": "Santa Fe, Argentina",
+    "website": {
+      "url": "https://luucassr.github.io/portfolio/",
+      "label": ""
+    },
+    "customFields": []
+  },
+  "summary": {
+    "title": "",
+    "columns": 1,
+    "hidden": false,
+    "content": "<p>I am Lucas Rossi, and I am passionate about building digital products that not only function perfectly but also look incredible. As a Full-Stack developer, my strength lies in the modern ecosystem of <strong>Next.js, React, and TypeScript</strong>, combining impeccable aesthetics achieved through <strong>Tailwind CSS and Figma</strong> with a solid backend in <strong>Express or FastAPI</strong>. I specialize in designing intuitive interfaces and managing robust <strong>PostgreSQL</strong> databases, ensuring that every line of code delivers real value to the end user.</p>"
+  },
+  "sections": {
+    "profiles": {
+      "title": "",
+      "columns": 2,
+      "hidden": false,
+      "items": [
+        {
+          "id": "019c9141-5ea7-720e-b8ba-cb66334f66ec",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": true
+          },
+          "icon": "acorn",
+          "network": "Instagram",
+          "username": "lucassrossii_",
+          "website": {
+            "url": "https://www.instagram.com/lucassrossii_",
+            "label": ""
+          }
+        },
+        {
+          "id": "019c9141-b613-7658-b06b-a0eed9cd3b8f",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": true
+          },
+          "icon": "acorn",
+          "network": "Linkedin",
+          "username": "lucas rossi  ",
+          "website": {
+            "url": "https://www.linkedin.com/in/lucas-rossi-052926389/",
+            "label": ""
+          }
+        }
+      ]
+    },
+    "experience": {
+      "title": "",
+      "columns": 1,
+      "hidden": false,
+      "items": []
+    },
+    "education": {
+      "title": "",
+      "columns": 1,
+      "hidden": false,
+      "items": []
+    },
+    "projects": {
+      "title": "",
+      "columns": 2,
+      "hidden": false,
+      "items": [
+        {
+          "id": "019c9142-e1bb-761e-9fea-383bf0b16872",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": true
+          },
+          "name": "Aplicación de Gestión de Proyectos",
+          "period": "4 semanas",
+          "website": {
+            "url": "https://project-manager-pi-three.vercel.app/",
+            "label": ""
+          },
+          "description": "<p>This application is a <strong>Kanban-style project manager</strong> designed to simplify task organization. It allows for the creation of custom columns where task cards can be moved, edited, and marked as completed. Each task supports descriptions, labels, and deadlines. To ensure privacy, the system features a secure <strong>user authentication</strong> framework.</p>"
+        },
+        {
+          "id": "019c9168-0734-73b6-ba71-0be567bba921",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": true
+          },
+          "name": "Guia Comercial",
+          "period": "En desarrollo",
+          "website": {
+            "url": "",
+            "label": ""
+          },
+          "description": "<p>This web platform serves as a <strong>comprehensive business directory</strong> designed to centralize and provide visibility to local businesses through a dynamic management system. After creating and validating a personal account, users can autonomously manage their presence within the directory.</p>"
+        }
+      ]
+    },
+    "skills": {
+      "title": "",
+      "columns": 3,
+      "hidden": false,
+      "items": [
+        {
+          "id": "019c9149-be42-721c-8270-068fb27595f7",
+          "hidden": false,
+          "icon": "acorn",
+          "name": "React",
+          "proficiency": "Advanced",
+          "level": 0,
+          "keywords": [
+            "CSS",
+            "Component Lifecycle",
+            "JSX",
+            "Redux",
+            "Context API",
+            "Hooks"
+          ]
+        },
+        {
+          "id": "019c9153-68d6-768a-a7dc-d9146053058c",
+          "hidden": false,
+          "icon": "acorn",
+          "name": "Next.js",
+          "proficiency": "intermediate",
+          "level": 0,
+          "keywords": [
+            "API Routes",
+            "Optimization",
+            "App Router",
+            "SSG",
+            "SSR"
+          ]
+        },
+        {
+          "id": "019c9154-79ce-7785-bccd-9bc48a97f247",
+          "hidden": false,
+          "icon": "acorn",
+          "name": "Tailwind CSS",
+          "proficiency": "Advanced",
+          "level": 0,
+          "keywords": [
+            "Responsive Design",
+            "JIT Engine",
+            "Custom Themes",
+            "Flexbox/Grid",
+            "UX/UI"
+          ]
+        },
+        {
+          "id": "019c9155-770a-7567-9f2c-edbbe323335b",
+          "hidden": false,
+          "icon": "acorn",
+          "name": "JavaScript y TypeScript",
+          "proficiency": "Advanced",
+          "level": 0,
+          "keywords": [
+            "ES6+",
+            "Async/Await",
+            "Closures",
+            "DOM Manipulation",
+            "JSON",
+            "Try/Catch",
+            "Type Safety",
+            "Interfases",
+            "Custom Types"
+          ]
+        },
+        {
+          "id": "019c9156-f05e-732f-83dd-0ac9ed677f36",
+          "hidden": false,
+          "icon": "acorn",
+          "name": "Express",
+          "proficiency": "intermediate",
+          "level": 0,
+          "keywords": [
+            "REST API",
+            "Middleware",
+            "JWT Auth"
+          ]
+        },
+        {
+          "id": "019c9157-45b3-70f7-b7f5-379ac6e25287",
+          "hidden": false,
+          "icon": "acorn",
+          "name": "PostgreSQL",
+          "proficiency": "intermediate",
+          "level": 0,
+          "keywords": [
+            "SQL",
+            "Relational DB",
+            "Joins",
+            "Indexing",
+            "Prisma"
+          ]
+        },
+        {
+          "id": "019c9157-b8ce-76ad-b55d-5f574494aa9e",
+          "hidden": false,
+          "icon": "acorn",
+          "name": "FastAPI",
+          "proficiency": "intermediate",
+          "level": 0,
+          "keywords": [
+            "Python",
+            "Pydantic",
+            "Asynchronous",
+            "Swagger/OpenAPI",
+            "Fetch"
+          ]
+        },
+        {
+          "id": "019c9158-3cd6-74af-a98f-9f795a207d5e",
+          "hidden": false,
+          "icon": "acorn",
+          "name": "Git / GitHub",
+          "proficiency": "Advanced",
+          "level": 0,
+          "keywords": [
+            "Version Control",
+            "Pull Requests",
+            "Branching",
+            "Merge",
+            "Git Flow"
+          ]
+        },
+        {
+          "id": "019c9158-9536-7203-b0fc-8f4b745550e0",
+          "hidden": false,
+          "icon": "acorn",
+          "name": "REST APIs",
+          "proficiency": "Advanced",
+          "level": 0,
+          "keywords": [
+            "CRUD",
+            "HTTP Methods",
+            "Status Codes",
+            "Documentation"
+          ]
+        }
+      ]
+    },
+    "languages": {
+      "title": "",
+      "columns": 3,
+      "hidden": false,
+      "items": [
+        {
+          "id": "019c915b-5b1b-769b-a05d-5034183bc21c",
+          "hidden": false,
+          "language": "Spanish",
+          "fluency": "Native",
+          "level": 0
+        },
+        {
+          "id": "019c915b-7320-76d0-9099-38ecff269142",
+          "hidden": false,
+          "language": "English",
+          "fluency": "Advanced",
+          "level": 0
+        },
+        {
+          "id": "019c915b-9351-731d-a518-278b71961ee3",
+          "hidden": false,
+          "language": "Portuges",
+          "fluency": "Beginner",
+          "level": 0
+        }
+      ]
+    },
+    "interests": {
+      "title": "",
+      "columns": 1,
+      "hidden": false,
+      "items": [
+        {
+          "id": "019c915b-b20a-711e-b522-506dd968a01f",
+          "hidden": false,
+          "icon": "acorn",
+          "name": "Gym",
+          "keywords": [
+            "Train",
+            "Life Style",
+            "Hobby",
+            "weights"
+          ]
+        }
+      ]
+    },
+    "awards": {
+      "title": "",
+      "columns": 1,
+      "hidden": false,
+      "items": []
+    },
+    "certifications": {
+      "title": "",
+      "columns": 3,
+      "hidden": false,
+      "items": [
+        {
+          "id": "019c915d-50b5-7581-905c-abe94f0fdbe5",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": true
+          },
+          "title": "CS50P",
+          "issuer": "Harvard University",
+          "date": "1 de Octubre de 2025",
+          "website": {
+            "url": "https://cs50.harvard.edu/certificates/589dffe6-75c2-4378-a2d1-28221840db3c",
+            "label": "Certificado"
+          },
+          "description": "<p>This certificate validates proficiency in the <strong>Python</strong> programming language. Throughout the course, I developed advanced skills in functions, variables, data types, control structures, and exception handling. Additionally, I delved into the use of third-party libraries, <strong>unit testing</strong>, regular expressions, and <strong>Object-Oriented Programming (OOP)</strong></p>"
+        },
+        {
+          "id": "019c915e-ea3d-716e-95d5-06b188a3ed53",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": true
+          },
+          "title": "CS50x",
+          "issuer": "Harvard University",
+          "date": "8 de Noviembre de 2025",
+          "website": {
+            "url": "https://cs50.harvard.edu/certificates/73b360d7-e6bc-480d-987c-181d4f085e4e",
+            "label": "Certificado"
+          },
+          "description": "<p>This intensive course provides a solid foundation in algorithms, data structures, and computational thinking. Throughout this program, I learned to think algorithmically to solve complex problems efficiently. The training focuses primarily on the low-level language <strong>C</strong></p>"
+        },
+        {
+          "id": "019c9160-0f5d-72be-adc3-e02fbec0d084",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": true
+          },
+          "title": "CS50 SQL",
+          "issuer": "Harvard University",
+          "date": "3 de Diciembre de 2025",
+          "website": {
+            "url": "https://cs50.harvard.edu/certificates/903c093e-8608-4cf1-a4d6-494c6e12f11e",
+            "label": "Certificado"
+          },
+          "description": "<p>This course allowed me to master <strong>SQLite</strong>, which I later expanded to <strong>PostgreSQL</strong> using the <strong>CRUD</strong> model. I learned to design database schemas, write complex queries, and ensure data integrity through the use of constraints. It also covers topics such as scalability and security in information management.</p>"
+        }
+      ]
+    },
+    "publications": {
+      "title": "",
+      "columns": 1,
+      "hidden": false,
+      "items": []
+    },
+    "volunteer": {
+      "title": "",
+      "columns": 1,
+      "hidden": false,
+      "items": []
+    },
+    "references": {
+      "title": "",
+      "columns": 1,
+      "hidden": false,
+      "items": []
+    }
+  },
+  "customSections": [],
+  "metadata": {
+    "template": "onyx",
+    "layout": {
+      "sidebarWidth": 50,
+      "pages": [
+        {
+          "fullWidth": true,
+          "main": [
+            "summary",
+            "skills",
+            "projects",
+            "experience",
+            "volunteer",
+            "references",
+            "certifications",
+            "awards",
+            "languages",
+            "interests",
+            "publications",
+            "education",
+            "profiles"
+          ],
+          "sidebar": []
+        }
+      ]
+    },
+    "css": {
+      "enabled": false,
+      "value": ""
+    },
+    "page": {
+      "gapX": 4,
+      "gapY": 6,
+      "marginX": 14,
+      "marginY": 12,
+      "format": "a4",
+      "locale": "es-ES",
+      "hideIcons": false
+    },
+    "design": {
+      "level": {
+        "icon": "align-center-vertical",
+        "type": "icon"
+      },
+      "colors": {
+        "primary": "rgba(21, 93, 252, 1)",
+        "text": "rgba(0, 0, 0, 1)",
+        "background": "rgba(255, 255, 255, 1)"
+      }
+    },
+    "typography": {
+      "body": {
+        "fontFamily": "IBM Plex Serif",
+        "fontWeights": [
+          "400",
+          "500"
+        ],
+        "fontSize": 9,
+        "lineHeight": 1.4
+      },
+      "heading": {
+        "fontFamily": "IBM Plex Serif",
+        "fontWeights": [
+          "600"
+        ],
+        "fontSize": 14,
+        "lineHeight": 1.5
+      }
+    },
+    "notes": ""
+  }
+}
