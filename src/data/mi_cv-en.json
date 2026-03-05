@@ -140,13 +140,7 @@
           "name": "Next.js",
           "proficiency": "intermediate",
           "level": 0,
-          "keywords": [
-            "API Routes",
-            "Optimization",
-            "App Router",
-            "SSG",
-            "SSR"
-          ]
+          "keywords": ["API Routes", "Optimization", "App Router", "SSG", "SSR"]
         },
         {
           "id": "019c9154-79ce-7785-bccd-9bc48a97f247",
@@ -189,11 +183,7 @@
           "name": "Express",
           "proficiency": "intermediate",
           "level": 0,
-          "keywords": [
-            "REST API",
-            "Middleware",
-            "JWT Auth"
-          ]
+          "keywords": ["REST API", "Middleware", "JWT Auth"]
         },
         {
           "id": "019c9157-45b3-70f7-b7f5-379ac6e25287",
@@ -202,13 +192,7 @@
           "name": "PostgreSQL",
           "proficiency": "intermediate",
           "level": 0,
-          "keywords": [
-            "SQL",
-            "Relational DB",
-            "Joins",
-            "Indexing",
-            "Prisma"
-          ]
+          "keywords": ["SQL", "Relational DB", "Joins", "Indexing", "Prisma"]
         },
         {
           "id": "019c9157-b8ce-76ad-b55d-5f574494aa9e",
@@ -247,12 +231,25 @@
           "name": "REST APIs",
           "proficiency": "Advanced",
           "level": 0,
-          "keywords": [
-            "CRUD",
-            "HTTP Methods",
-            "Status Codes",
-            "Documentation"
-          ]
+          "keywords": ["CRUD", "HTTP Methods", "Status Codes", "Documentation"]
+        },
+        {
+          "id": "019c9158-9536-7203-b0fc-8f4b745550e1",
+          "hidden": false,
+          "icon": "acorn",
+          "name": "SQL Aclehmy",
+          "proficiency": "intermediate",
+          "level": 0,
+          "keywords": ["Declarative Base, Table Mapping", "Migrations: Alembic", "Connection Pooling", "CRUD"]
+        },
+        {
+          "id": "019c9158-9536-7203-b0fc-8f4b745550e2",
+          "hidden": false,
+          "icon": "acorn",
+          "name": "Fast API",
+          "proficiency": "intermediate",
+          "level": 0,
+          "keywords": ["Data Validation", "OAuth2, JWT, CORS.", "Pydantic Models"]
         }
       ]
     },
@@ -294,12 +291,7 @@
           "hidden": false,
           "icon": "acorn",
           "name": "Gym",
-          "keywords": [
-            "Train",
-            "Life Style",
-            "Hobby",
-            "weights"
-          ]
+          "keywords": ["Train", "Life Style", "Hobby", "weights"]
         }
       ]
     },
@@ -434,18 +426,13 @@
     "typography": {
       "body": {
         "fontFamily": "IBM Plex Serif",
-        "fontWeights": [
-          "400",
-          "500"
-        ],
+        "fontWeights": ["400", "500"],
         "fontSize": 9,
         "lineHeight": 1.4
       },
       "heading": {
         "fontFamily": "IBM Plex Serif",
-        "fontWeights": [
-          "600"
-        ],
+        "fontWeights": ["600"],
         "fontSize": 14,
         "lineHeight": 1.5
       }
