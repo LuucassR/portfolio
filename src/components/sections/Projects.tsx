@@ -15,6 +15,14 @@ const projectImages: Record<number, string[]> = {
     "./guia_comercial4.png",
     "./guia_comercial5.png",
   ],
+  3: [
+    "./cryptoPulse1.png",
+    "./cryptoPulse2.png",
+    "./cryptoPulse3.png",
+    "./cryptoPulse4.png",
+    "./cryptoPulse5.png",
+    "./cryptoPulse6.png",
+  ],
 };
 
 export default function Projects() {
@@ -28,12 +36,12 @@ export default function Projects() {
       id="projects"
       className="py-24 px-6 bg-slate-100/50 dark:bg-slate-900/50"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[90vw] mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-16">
           Proyectos Destacados
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {portfolioData.projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

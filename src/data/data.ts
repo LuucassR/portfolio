@@ -76,6 +76,11 @@ export const portfolioData = {
       keywords: ["Python", "Pydantic", "Asynchronous"],
     },
     {
+      name: "SQLAlchemy",
+      level: "Intermedia",
+      keywords: ["ORM", "DeclarativeBase", "typing Library"],
+    },
+    {
       name: "PostgreSQL",
       level: "Intermedia",
       keywords: ["SQL", "Prisma", "Joins"],
@@ -102,6 +107,15 @@ export const portfolioData = {
       description:
         "Plataforma web diseñada para centralizar negocios locales mediante un sistema de gestión dinámica donde los usuarios administran su presencia.",
       tech: ["React", "PostgreSQL", "Express"],
+      demo: "#",
+      github: "#",
+    },
+    {
+      id: 3,
+      title: "CrypotoPulse",
+      description:
+        "FastAPI CryptoPulse es el motor de backend diseñado para gestionar y monitorear carteras de criptomonedas en tiempo real. Construido con Python y el framework FastAPI, el proyecto prioriza la velocidad, la seguridad y una arquitectura modular fácil de escalar.",
+      tech: ["FastApi", "SQLAlchemy", "React", "Uvicorn", "PostgreSQL"],
       demo: "#",
       github: "#",
     },

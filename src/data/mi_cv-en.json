@@ -97,6 +97,20 @@
           "description": "<p>This application is a <strong>Kanban-style project manager</strong> designed to simplify task organization. It allows for the creation of custom columns where task cards can be moved, edited, and marked as completed. Each task supports descriptions, labels, and deadlines. To ensure privacy, the system features a secure <strong>user authentication</strong> framework.</p>"
         },
         {
+          "id": "019c9142-e1bb-761e-9fea-383bf0b14213",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": true
+          },
+          "name": "CryptoPulse",
+          "period": "6 semanas",
+          "website": {
+            "url": "https://fastapi-cryptopulse-qoh3.vercel.app/",
+            "label": ""
+          },
+          "description": "<p>This application is a <strong>high-performance crypto portfolio tracker</strong> designed to manage digital assets in real-time. Built with <strong>FastAPI and Python 3.14</strong>, it features a modular backend architecture for secure <strong>user authentication</strong> and efficient data querying. The system leverages asynchronous processing to provide a live pulse of investment data while ensuring <strong>database integrity</strong> through a structured SQL relational layer.</p>"
+        },
+        {
           "id": "019c9168-0734-73b6-ba71-0be567bba921",
           "hidden": false,
           "options": {
@@ -240,7 +254,12 @@
           "name": "SQL Aclehmy",
           "proficiency": "intermediate",
           "level": 0,
-          "keywords": ["Declarative Base, Table Mapping", "Migrations: Alembic", "Connection Pooling", "CRUD"]
+          "keywords": [
+            "Declarative Base, Table Mapping",
+            "Migrations: Alembic",
+            "Connection Pooling",
+            "CRUD"
+          ]
         },
         {
           "id": "019c9158-9536-7203-b0fc-8f4b745550e2",
@@ -249,7 +268,11 @@
           "name": "Fast API",
           "proficiency": "intermediate",
           "level": 0,
-          "keywords": ["Data Validation", "OAuth2, JWT, CORS.", "Pydantic Models"]
+          "keywords": [
+            "Data Validation",
+            "OAuth2, JWT, CORS.",
+            "Pydantic Models"
+          ]
         }
       ]
     },
