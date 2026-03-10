@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 // 1. Asegúrate de que este import sea correcto
 import { portfolioData } from "../../data/data";
 
@@ -72,14 +72,7 @@ function ProjectCard({ project, index }: any) {
       {/* Cabecera del proyecto */}
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-xl font-bold dark:text-white">{project.title}</h3>
-        <div className="flex gap-3 text-slate-500">
-          <a
-            href={project.demo}
-            className="flex items-center gap-2 hover:text-primary-600 transition-colors"
-          >
-            <p className="text-sm">Demo</p> <ExternalLink size={18} />
-          </a>
-        </div>
+        <div className="flex gap-3 text-slate-500"></div>
       </div>
 
       {/* Contenedor de Imagen y Galería */}

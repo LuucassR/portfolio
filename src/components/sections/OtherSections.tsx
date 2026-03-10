@@ -103,7 +103,7 @@ export function Contact() {
             placeholder="Mensaje"
             className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 resize-none"
           ></textarea>
-          <button className="w-full bg-white text-primary-600 font-bold py-3 rounded-lg hover:bg-slate-100 transition-colors flex items-center justify-center gap-2">
+          <button className="w-full bg-blue-600 text-primary-600 font-bold py-3 rounded-lg hover:bg-slate-100 hover:text-black transition-colors flex items-center justify-center gap-2">
             Enviar Mensaje <Send className="w-4 h-4" />
           </button>
         </form>

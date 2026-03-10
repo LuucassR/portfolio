@@ -24,7 +24,7 @@ export default function CVSection() {
 
           <div className="flex gap-4">
             <a
-              href="./mi_cv-es.pdf"
+              href="./cv-es_final.pdf"
               download
               className="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 py-2.5 rounded-xl font-semibold hover:border-blue-600 transition-all shadow-sm"
             >
@@ -32,7 +32,7 @@ export default function CVSection() {
               <span>Español (PDF)</span>
             </a>
             <a
-              href="./mi_cv-en.pdf"
+              href="./cv-en_final.pdf"
               download
               className="flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-xl font-semibold hover:bg-blue-700 transition-all shadow-lg"
             >
