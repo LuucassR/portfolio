@@ -116,7 +116,7 @@ export const portfolioData = {
       description:
         "FastAPI CryptoPulse es el motor de backend diseñado para gestionar y monitorear carteras de criptomonedas en tiempo real. Construido con Python y el framework FastAPI, el proyecto prioriza la velocidad, la seguridad y una arquitectura modular fácil de escalar.",
       tech: ["FastApi", "SQLAlchemy", "React", "Uvicorn", "PostgreSQL"],
-      demo: "#",
+      demo: "https://fastapi-cryptopulse.vercel.app/",
       github: "#",
     },
   ],
