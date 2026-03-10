@@ -75,9 +75,9 @@ function ProjectCard({ project, index }: any) {
         <div className="flex gap-3 text-slate-500">
           <a
             href={project.demo}
-            className="hover:text-primary-600 transition-colors"
+            className="flex items-center gap-2 hover:text-primary-600 transition-colors"
           >
-            <ExternalLink size={18} />
+            <p className="text-sm">Demo</p> <ExternalLink size={18} />
           </a>
         </div>
       </div>
