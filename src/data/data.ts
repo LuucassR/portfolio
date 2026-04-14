@@ -1,24 +1,19 @@
-import { Linkedin, Instagram, Globe } from "lucide-react";
+import { Linkedin, Globe } from "lucide-react";
 
 export const portfolioData = {
   personal: {
-    name: "Lucas Rossi",
+    name: "Lucas David Rossi",
     role: "Junior Full-Stack Developer",
     location: "Santa Fe, Argentina",
     email: "lucassrossi12@gmail.com",
-    phone: "3425594220",
+    phone: "(342) 559-4220",
     website: "https://luucassr.github.io/portfolio/",
-    bio: "Me apasiona construir productos digitales que no solo funcionen a la perfección, sino que también se vean increíbles. Como desarrollador Full-Stack, mi fuerte es el ecosistema moderno de Next.js, React y TypeScript, combinando estética impecable con un backend sólido.",
+    bio: "Junior Full-Stack Developer passionate about building digital products that combine seamless technical functionality with exceptional aesthetics. I specialize in the modern Next.js, React, and TypeScript ecosystem, with the ability to design intuitive interfaces using Tailwind CSS and manage robust backend architectures in Express or FastAPI with PostgreSQL databases.",
     social: [
       {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/lucas-rossi-052926389/",
         icon: Linkedin,
-      },
-      {
-        name: "Instagram",
-        url: "https://www.instagram.com/lucassrossii_/",
-        icon: Instagram,
       },
       {
         name: "Portfolio",
@@ -46,107 +41,212 @@ export const portfolioData = {
   ],
   skills: [
     {
-      name: "React",
-      level: "Avanzada",
-      keywords: ["Hooks", "Context API", "Redux", "JSX"],
+      category: "Frontend",
+      items: [
+        {
+          name: "React",
+          level: "Avanzada",
+          keywords: ["Hooks", "Context API", "Redux", "JSX"],
+        },
+        {
+          name: "Next.js",
+          level: "Intermedia",
+          keywords: ["App Router", "SSR", "SSG", "API Routes"],
+        },
+        {
+          name: "Tailwind CSS",
+          level: "Avanzada",
+          keywords: ["Responsive Design", "UX/UI", "Custom Themes"],
+        },
+        {
+          name: "HTML 5",
+          level: "Avanzada",
+          keywords: ["Semantic HTML", "Accessibility", "Forms"],
+        },
+        {
+          name: "CSS",
+          level: "Avanzada",
+          keywords: ["Flexbox", "Grid", "Animations", "Responsive"],
+        },
+        {
+          name: "Vitest",
+          level: "Intermedia",
+          keywords: ["Unit Testing", "Integration Testing", "Mocking"],
+        },
+      ]
     },
     {
-      name: "Next.js",
-      level: "Intermedia",
-      keywords: ["App Router", "SSR", "SSG", "API Routes"],
+      category: "Backend",
+      items: [
+        {
+          name: "Python",
+          level: "Intermedia",
+          keywords: ["OOP", "Async Programming", "Testing"],
+        },
+        {
+          name: "TypeScript / JavaScript",
+          level: "Avanzada",
+          keywords: ["ES6+", "Node.js", "Async/Await"],
+        },
+        {
+          name: "Express.js",
+          level: "Intermedia",
+          keywords: ["REST API", "Middleware", "JWT Auth"],
+        },
+        {
+          name: "FastAPI",
+          level: "Intermedia",
+          keywords: ["Python", "Pydantic", "Asynchronous"],
+        },
+        {
+          name: "Pytest",
+          level: "Intermedia",
+          keywords: ["Unit Testing", "Fixtures", "Assertions"],
+        },
+      ]
     },
     {
-      name: "Tailwind CSS",
-      level: "Avanzada",
-      keywords: ["Responsive Design", "UX/UI", "Custom Themes"],
+      category: "Tools & Databases",
+      items: [
+        {
+          name: "SQLAlchemy",
+          level: "Intermedia",
+          keywords: ["ORM", "DeclarativeBase", "typing Library"],
+        },
+        {
+          name: "Git / GitHub",
+          level: "Avanzada",
+          keywords: ["Version Control", "Git Flow", "PRs"],
+        },
+        {
+          name: "PostgreSQL",
+          level: "Intermedia",
+          keywords: ["SQL", "Prisma", "Joins"],
+        },
+        {
+          name: "SQLite",
+          level: "Intermedia",
+          keywords: ["Embedded DB", "SQL", "Transactions"],
+        },
+        {
+          name: "MySQL",
+          level: "Básica",
+          keywords: ["SQL", "Database Design", "Queries"],
+        },
+        {
+          name: "NoSQL",
+          level: "Básica",
+          keywords: ["MongoDB", "Document DB", "Schema Design"],
+        },
+        {
+          name: "Figma",
+          level: "Intermedia",
+          keywords: ["UI Design", "Prototyping", "Collaboration"],
+        },
+      ]
     },
     {
-      name: "TypeScript",
-      level: "Avanzada",
-      keywords: ["Type Safety", "Interfaces", "ES6+"],
+      category: "DevOps & Cloud",
+      items: [
+        {
+          name: "Docker",
+          level: "Intermedia",
+          keywords: ["Containers", "Dockerfile", "Docker Compose"],
+        },
+        {
+          name: "Docker Compose",
+          level: "Intermedia",
+          keywords: ["Multi-container", "Services", "Networking"],
+        },
+        {
+          name: "GitHub Actions (CI/CD)",
+          level: "Intermedia",
+          keywords: ["Workflows", "Pipelines", "Automation"],
+        },
+        {
+          name: "Vercel",
+          level: "Avanzada",
+          keywords: ["Deployment", "Serverless", "Edge Functions"],
+        },
+        {
+          name: "AWS",
+          level: "Básica",
+          keywords: ["EC2", "S3", "Cloud Services"],
+        },
+      ]
     },
+  ],
+  experience: [
     {
-      name: "Express",
-      level: "Intermedia",
-      keywords: ["REST API", "Middleware", "JWT Auth"],
-    },
-    {
-      name: "FastAPI",
-      level: "Intermedia",
-      keywords: ["Python", "Pydantic", "Asynchronous"],
-    },
-    {
-      name: "SQLAlchemy",
-      level: "Intermedia",
-      keywords: ["ORM", "DeclarativeBase", "typing Library"],
-    },
-    {
-      name: "PostgreSQL",
-      level: "Intermedia",
-      keywords: ["SQL", "Prisma", "Joins"],
-    },
-    {
-      name: "Git / GitHub",
-      level: "Avanzada",
-      keywords: ["Version Control", "Git Flow", "PRs"],
-    },
+      id: 1,
+      company: "Digital Forensics",
+      role: "Forensic Analyst",
+      period: "February 2026 - March 2026",
+      description: "Conducted digital forensic analysis to identify and preserve critical electronic evidence for legal proceedings. Performed file integrity verification using cryptographic hashes and algorithms to ensure data authenticity. Demonstrated high-level accountability while managing urgent and high-stakes cases.",
+      type: "freelance"
+    }
   ],
   projects: [
     {
       id: 1,
-      title: "Gestión de Proyectos Kanban",
-      description:
-        "Gestor de proyectos que simplifica la organización de tareas con columnas personalizadas, autenticación segura y gestión de fechas límite.",
-      tech: ["Next.js", "Tailwind CSS", "Auth"],
+      title: "Prello - Kanban Project Manager",
+      description: "Developed a full-stack project management application featuring a Kanban-style interface. Implemented secure user authentication and interactive features such as drag-and-drop functionality. Enabled task organization through custom columns, labels, and deadlines.",
+      tech: ["Next.js", "Tailwind CSS", "TypeScript", "React", "Vercel"],
       demo: "https://project-manager-pi-three.vercel.app/",
-      github: "#",
+      github: "https://github.com/luucassr/prello",
+      featured: true,
+      images: ["/prello1.png", "/prello2.png", "/prello3.png"]
     },
     {
       id: 2,
-      title: "Guía Comercial Integral",
-      description:
-        "Plataforma web diseñada para centralizar negocios locales mediante un sistema de gestión dinámica donde los usuarios administran su presencia.",
-      tech: ["React", "PostgreSQL", "Express"],
+      title: "Guía Zona - Commercial Directory",
+      description: "Created a dynamic web platform designed to centralize and increase visibility for local businesses. Designed a management system allowing business owners to register and verify their accounts. Developed an autonomous administration dashboard for managing commercial profiles within the directory.",
+      tech: ["React", "Node.js", "PostgreSQL", "Express.js"],
       demo: "#",
       github: "#",
+      featured: false,
+      images: ["/guia_comercial1.png", "/guia_comercial2.png", "/guia_comercial3.png", "/guia_comercial4.png", "/guia_comercial5.png"]
     },
     {
       id: 3,
-      title: "CrypotoPulse",
-      description:
-        "FastAPI CryptoPulse es el motor de backend diseñado para gestionar y monitorear carteras de criptomonedas en tiempo real. Construido con Python y el framework FastAPI, el proyecto prioriza la velocidad, la seguridad y una arquitectura modular fácil de escalar.",
-      tech: ["FastApi", "SQLAlchemy", "React", "Uvicorn", "PostgreSQL"],
+      title: "CryptoPulse",
+      description: "Developed a high-performance API for real-time cryptocurrency tracking. Designed RESTful endpoints focused on asynchronous operations to optimize response times. Integrated external financial data for seamless visualization in user dashboards.",
+      tech: ["FastAPI", "Python", "REST APIs", "JWT", "SQLAlchemy"],
       demo: "https://fastapi-cryptopulse.vercel.app/",
       github: "#",
+      featured: true,
+      images: ["/cryptoPulse1.png", "/cryptoPulse2.png", "/cryptoPulse3.png", "/cryptoPulse4.png", "/cryptoPulse5.png", "/cryptoPulse6.png"]
     },
   ],
   certifications: [
     {
-      title: "CS50P: Programming with Python",
+      title: "CS50 Python",
       issuer: "Harvard University",
-      date: "Octubre 2025",
-      description:
-        "Dominio de Python, POO, pruebas unitarias y manejo de excepciones.",
+      date: "2025",
+      description: "Advanced Python Programming Certification",
+      url: "https://certificates.cs50.io/589dffe6-75c2-4378-a2d1-28221840db3c.png?size=letter",
+      credential: "Certification"
     },
     {
-      title: "CS50x: Computer Science",
-      issuer: "Harvard University",
-      date: "Noviembre 2025",
-      description:
-        "Base sólida en algoritmos, estructuras de datos y lenguaje C.",
+      title: "CS50 X",
+      issuer: "Harvard University", 
+      date: "2025",
+      description: "Computer Science Certification",
+      url: "https://certificates.cs50.io/73b360d7-e6bc-480d-987c-181d4f085e4e.png?size=letter",
+      credential: "Certification"
     },
     {
-      title: "CS50 SQL: Databases",
+      title: "CS50 SQL",
       issuer: "Harvard University",
-      date: "Diciembre 2025",
-      description:
-        "Diseño de esquemas, consultas complejas y gestión de datos con SQLite y PostgreSQL.",
-    },
+      date: "2025", 
+      description: "Database Management & SQL Certification",
+      url: "https://certificates.cs50.io/903c093e-8608-4cf1-a4d6-494c6e12f11e.png?size=letter",
+      credential: "Certification"
+    }
   ],
   languages: [
-    { name: "Español", level: "Nativo" },
-    { name: "Inglés", level: "Avanzado" },
-    { name: "Portugués", level: "Principiante" },
+    { name: "Español", level: "Native" },
+    { name: "Inglés", level: "Advanced" },
   ],
 };
 

@@ -13,20 +13,25 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Sobre mí", href: "#about" },
-    { name: "Servicios", href: "#services" },
-    { name: "Proyectos", href: "#projects" },
-    { name: "Contacto", href: "#contact" },
+    { name: "Skills", href: "#skills" },
+    { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#projects" },
+    { name: "Certifications", href: "#certifications" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "glass py-4" : "bg-transparent py-6"}`}
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled 
+          ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-md py-4 shadow-lg border-b border-slate-200/50 dark:border-slate-700/50" 
+          : "bg-transparent py-6"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <a
           href="#"
-          className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-gray-200 to-blue-400"
+          className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-blue-600 to-cyan-500"
         >
           LR.
         </a>
@@ -37,7 +42,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium hover:text-primary-600 transition-colors"
+              className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               {link.name}
             </a>
@@ -48,8 +53,11 @@ export default function Navbar() {
         {/* Mobile */}
         <div className="md:hidden flex items-center gap-4">
           <ThemeToggle />
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X /> : <Menu />}
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
@@ -62,7 +70,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-lg font-medium"
+              className="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               {link.name}
             </a>

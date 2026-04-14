@@ -1,10 +1,65 @@
 @import "tailwindcss";
 
+:root {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-tertiary: #94a3b8;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #06b6d4;
+  --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  --border-color: rgba(59, 130, 246, 0.2);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --accent-primary: #60a5fa;
+  --accent-secondary: #22d3ee;
+  --accent-gradient: linear-gradient(135deg, #60a5fa 0%, #22d3ee 100%);
+  --border-color: rgba(96, 165, 250, 0.2);
+}
+
 @layer utilities {
   .glass {
-    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-slate-200 dark:border-slate-800;
+    @apply bg-white/80 backdrop-blur-md border border-slate-200/50 shadow-sm;
   }
+  
+  [data-theme="dark"] .glass {
+    @apply bg-slate-900/80 border-slate-700/50;
+  }
+  
   .glass-card {
-    @apply bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow;
+    @apply bg-white border border-slate-200/50 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  [data-theme="dark"] .glass-card {
+    @apply bg-slate-900 border-slate-700/50;
+  }
+  
+  .gradient-text {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient-border {
+    background: var(--accent-gradient);
+    padding: 1px;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
   }
 }
