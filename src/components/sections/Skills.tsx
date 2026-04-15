@@ -114,6 +114,7 @@ function SkillCard({ skill, index }: { skill: any; index: number }) {
       <div className="relative z-10 mb-4">
         <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-slate-100 dark:bg-slate-700 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors duration-300">
           <img 
+            loading="lazy"
             src={iconUrl} 
             alt={skill.name}
             className="w-10 h-10 object-contain"

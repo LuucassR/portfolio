@@ -247,7 +247,7 @@ export const portfolioData = {
         "Vercel",
         "AWS RDS",
       ],
-      demo: "https://jcrossi.vercel.app/",
+      demo: "https://dad-webpage-weld.vercel.app/",
       github: "#",
       featured: false,
       images: [
