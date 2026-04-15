@@ -23,10 +23,10 @@ export function SkillsAndServices() {
           <div className="flex flex-wrap gap-4">
             {portfolioData.skills.map((skill) => (
               <div
-                key={skill.name}
+                key={skill.category}
                 className="px-6 py-3 glass-card rounded-xl font-medium"
               >
-                {skill.name}
+                {skill.category}
               </div>
             ))}
           </div>

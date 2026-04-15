@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Calendar, Briefcase, MapPin } from "lucide-react";
+import { Calendar, Briefcase } from "lucide-react";
 import { portfolioData } from "../../data/data";
 
 export default function Experience() {
