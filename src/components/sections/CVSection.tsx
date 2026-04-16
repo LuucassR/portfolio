@@ -9,6 +9,7 @@ import {
 import { motion } from "framer-motion";
 // Importamos el JSON que proporcionaste
 import cvData from "../../data/mi_cv-en.json";
+import type { CVItem, CvLanguageItem, CertificationItem, CVProjectItem } from "../../types/types";
 
 export default function CVSection() {
   return (
@@ -79,7 +80,7 @@ export default function CVSection() {
                   </h4>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {cvData.sections.skills.items.map((skill: any) => (
+                  {cvData.sections.skills.items.map((skill: CVItem) => (
                     <div key={skill.id} className="w-full">
                       <div className="flex justify-between text-xs mb-1">
                         <span className="font-semibold">{skill.name}</span>
@@ -109,7 +110,7 @@ export default function CVSection() {
                   </h4>
                 </div>
                 <div className="space-y-2">
-                  {cvData.sections.languages.items.map((lang: any) => (
+                  {cvData.sections.languages.items.map((lang: CvLanguageItem) => (
                     <div key={lang.id} className="flex justify-between text-sm">
                       <span className="text-slate-600 dark:text-slate-400">
                         {lang.language}
@@ -131,7 +132,7 @@ export default function CVSection() {
                   </h4>
                 </div>
                 <div className="space-y-8 border-l-2 border-slate-100 dark:border-slate-800 ml-3 pl-6">
-                  {cvData.sections.certifications.items.map((cert: any) => (
+                  {cvData.sections.certifications.items.map((cert: CertificationItem) => (
                     <div key={cert.id} className="relative">
                       <div className="absolute -left-7.75 top-1.5 w-3 h-3 rounded-full bg-blue-600" />
                       <h5 className="font-bold text-slate-900 dark:text-white">
@@ -166,7 +167,7 @@ export default function CVSection() {
                   </h4>
                 </div>
                 <div className="grid grid-cols-1 gap-4">
-                  {cvData.sections.projects.items.map((proj: any) => (
+                  {cvData.sections.projects.items.map((proj: CVProjectItem) => (
                     <div
                       key={proj.id}
                       className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800"

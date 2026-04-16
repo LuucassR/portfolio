@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Calendar, Briefcase } from "lucide-react";
 import { portfolioData } from "../../data/data";
+import type { ExperienceItem } from "../../types/types";
 
 export default function Experience() {
   if (!portfolioData || !portfolioData.experience) {
@@ -41,7 +42,7 @@ export default function Experience() {
   );
 }
 
-function ExperienceItem({ experience, index }: { experience: any; index: number }) {
+function ExperienceItem({ experience, index }: { experience: ExperienceItem; index: number }) {
   const isEven = index % 2 === 0;
 
   return (

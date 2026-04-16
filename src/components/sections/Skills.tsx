@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import React, { useState } from "react";
 import { portfolioData } from "../../data/data";
+import ArchitectureServiceAmazonEC2 from "aws-react-icons/icons/ArchitectureServiceAmazonEC2";
+import type { Item, Skills } from "../../types/types"
 
 // Technology icons mapping
-const techIcons: Record<string, string> = {
+const techIcons: Record<string, string | React.ReactElement> = {
   // Frontend
   "React": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
   "Next.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
@@ -30,7 +32,7 @@ const techIcons: Record<string, string> = {
   "Docker Compose": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
   "GitHub Actions (CI/CD)": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg",
   "Vercel": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
-  "AWS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+  "AWS": <ArchitectureServiceAmazonEC2 />,
 };
 
 export default function Skills() {
@@ -96,8 +98,8 @@ export default function Skills() {
   );
 }
 
-function SkillCard({ skill, index }: { skill: any; index: number }) {
-  const iconUrl = techIcons[skill.name] || "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/code/code-original.svg";
+function SkillCard({ skill, index }: { skill: Item; index: number }) {
+  const icon = techIcons[skill.name] || "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/code/code-original.svg";
 
   return (
     <motion.div
@@ -108,20 +110,26 @@ function SkillCard({ skill, index }: { skill: any; index: number }) {
       className="group relative bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200/50 dark:border-slate-700/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center text-center"
     >
       {/* Background Gradient on Hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/10 dark:to-cyan-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute inset-0 bg-linear-to-br from-blue-50 to-cyan-50 dark:from-blue-900/10 dark:to-cyan-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       
       {/* Icon Container */}
       <div className="relative z-10 mb-4">
         <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-slate-100 dark:bg-slate-700 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors duration-300">
-          <img 
-            loading="lazy"
-            src={iconUrl} 
-            alt={skill.name}
-            className="w-10 h-10 object-contain"
-            onError={(e) => {
-              e.currentTarget.src = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/code/code-original.svg";
-            }}
-          />
+          {typeof icon === 'string' ? (
+            <img 
+              loading="lazy"
+              src={icon} 
+              alt={skill.name}
+              className="w-10 h-10 object-contain"
+              onError={(e) => {
+                e.currentTarget.src = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/code/code-original.svg";
+              }}
+            />
+          ) : (
+            <div className="w-10 h-10 flex items-center justify-center">
+              {icon}
+            </div>
+          )}
         </div>
       </div>
 
