@@ -1,11 +1,18 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft, ExternalLink, Star } from "lucide-react";
+import { motion } from "framer-motion";
+import { ExternalLink, Star } from "lucide-react";
 import { portfolioData } from "../../data/data";
 import { SiGithub } from "react-icons/si";
-import type { Project } from "../../types/types"
+import type { Project } from "../../types/types";
+import { OptimizedCarousel } from "../ui/OptimizedCarousel";
+import { useStrategicPreload } from "../../hooks/useStrategicPreload";
 
 export default function Projects() {
+  // Get all project images for strategic preloading
+  const allProjectImages = portfolioData?.projects?.flatMap(p => p.images || []) || [];
+  
+  // Preload first few images when section is near viewport
+  useStrategicPreload(allProjectImages, { priority: 2, threshold: 0.3 });
+
   if (!portfolioData || !portfolioData.projects) {
     return <div className="py-24 text-center">Loading projects...</div>;
   }
@@ -74,11 +81,6 @@ function FeaturedProjectCard({
   index: number;
 }) {
   const images = project.images || [];
-  const [currentIdx, setCurrentIdx] = useState(0);
-
-  const nextImage = () => setCurrentIdx((prev) => (prev + 1) % images.length);
-  const prevImage = () =>
-    setCurrentIdx((prev) => (prev - 1 + images.length) % images.length);
 
   return (
     <motion.div
@@ -97,60 +99,14 @@ function FeaturedProjectCard({
       </div>
 
       {/* Image Gallery */}
-      <div className="relative aspect-video overflow-hidden">
-        <AnimatePresence mode="popLayout">
-          <motion.img
-            key={currentIdx}
-            src={images[currentIdx]}
-            alt={project.title}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.4 }}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              console.error(`Failed to load image: ${images[currentIdx]}`);
-              e.currentTarget.src =
-                "https://via.placeholder.com/600x400/3b82f6/ffffff?text=Image+Not+Found";
-            }}
-          />
-        </AnimatePresence>
-
-        {/* Navigation Arrows */}
-        {images.length > 1 && (
-          <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity">
-            <button
-              onClick={prevImage}
-              className="p-2 rounded-full bg-white/90 dark:bg-slate-800/90 text-slate-800 dark:text-white shadow-lg hover:scale-110 transition"
-            >
-              <ArrowLeft size={18} />
-            </button>
-            <button
-              onClick={nextImage}
-              className="p-2 rounded-full bg-white/90 dark:bg-slate-800/90 text-slate-800 dark:text-white shadow-lg hover:scale-110 transition"
-            >
-              <ArrowRight size={18} />
-            </button>
-          </div>
-        )}
-
-        {/* Image Indicators */}
-        {images.length > 1 && (
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-            {images.map((_, i: number) => (
-              <button
-                key={i}
-                onClick={() => setCurrentIdx(i)}
-                className={`transition-all duration-300 rounded-full ${
-                  i === currentIdx
-                    ? "w-8 h-2 bg-white"
-                    : "w-2 h-2 bg-white/50 hover:bg-white/75"
-                }`}
-              />
-            ))}
-          </div>
-        )}
-      </div>
+      <OptimizedCarousel
+        images={images}
+        alt={project.title}
+        priority={index === 0}
+        className="w-full h-full"
+        showNavigation={images.length > 1}
+        showIndicators={images.length > 1}
+      />
 
       {/* Content */}
       <div className="p-6">
@@ -205,11 +161,6 @@ function FeaturedProjectCard({
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const images = project.images || [];
-  const [currentIdx, setCurrentIdx] = useState(0);
-
-  const nextImage = () => setCurrentIdx((prev) => (prev + 1) % images.length);
-  const prevImage = () =>
-    setCurrentIdx((prev) => (prev - 1 + images.length) % images.length);
 
   return (
     <motion.div
@@ -219,37 +170,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       transition={{ delay: index * 0.1 }}
       className="group bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-200/50 dark:border-slate-700/50 hover:-translate-y-1"
     >
-      <div className="relative aspect-video overflow-hidden">
-        <AnimatePresence mode="popLayout">
-          <motion.img
-            key={currentIdx}
-            src={images[currentIdx] || "https://via.placeholder.com/400x250"}
-            alt={project.title}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.3 }}
-            className="w-full h-full object-cover"
-          />
-        </AnimatePresence>
-
-        {images.length > 1 && (
-          <div className="absolute inset-0 flex items-center justify-between px-2 opacity-0 group-hover:opacity-100 transition-opacity">
-            <button
-              onClick={prevImage}
-              className="p-1.5 rounded-full bg-white/90 dark:bg-slate-800/90 text-slate-800 dark:text-white shadow-lg hover:scale-110 transition"
-            >
-              <ArrowLeft size={14} />
-            </button>
-            <button
-              onClick={nextImage}
-              className="p-1.5 rounded-full bg-white/90 dark:bg-slate-800/90 text-slate-800 dark:text-white shadow-lg hover:scale-110 transition"
-            >
-              <ArrowRight size={14} />
-            </button>
-          </div>
-        )}
-      </div>
+      <OptimizedCarousel
+        images={images}
+        alt={project.title}
+        className="w-full h-full"
+        showNavigation={images.length > 1}
+        showIndicators={false}
+      />
 
       <div className="p-4">
         <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
