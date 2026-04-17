@@ -227,11 +227,11 @@ export const portfolioData = {
       github: "#",
       featured: false,
       images: [
-        "/guia_comercial1.png",
-        "/guia_comercial2.png",
-        "/guia_comercial3.png",
-        "/guia_comercial4.png",
-        "/guia_comercial5.png",
+        "./guia_comercial1.png",
+        "./guia_comercial2.png",
+        "./guia_comercial3.png",
+        "./guia_comercial4.png",
+        "./guia_comercial5.png",
       ],
     },
     {
