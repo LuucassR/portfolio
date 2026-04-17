@@ -76,7 +76,7 @@ export default function Hero() {
           
           <a
             href="/cv-en_final.pdf"
-            download="Lucas_Rossi_CV.pdf"
+            download="Lucas_Rossi_CV_EN.pdf"
             className="group inline-flex items-center justify-center px-8 py-4 font-medium rounded-full border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105"
           >
             <Download className="w-4 h-4 mr-2" />

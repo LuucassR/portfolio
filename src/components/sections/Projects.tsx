@@ -3,9 +3,34 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowLeft, ExternalLink, Star } from "lucide-react";
 import { portfolioData } from "../../data/data";
 import { SiGithub } from "react-icons/si";
+import { Maximize2 } from "lucide-react";
+import { SimpleLightbox } from "../ui/SimpleLightbox";
 import type { Project } from "../../types/types"
 
 export default function Projects() {
+  // Global lightbox state
+  const [globalLightbox, setGlobalLightbox] = useState({
+    isOpen: false,
+    images: [] as string[],
+    currentIndex: 0
+  });
+
+  const openGlobalLightbox = (images: string[], index: number) => {
+    setGlobalLightbox({
+      isOpen: true,
+      images,
+      currentIndex: index
+    });
+  };
+
+  const closeGlobalLightbox = () => {
+    setGlobalLightbox({
+      isOpen: false,
+      images: [],
+      currentIndex: 0
+    });
+  };
+
   if (!portfolioData || !portfolioData.projects) {
     return <div className="py-24 text-center">Loading projects...</div>;
   }
@@ -44,6 +69,7 @@ export default function Projects() {
               key={project.id}
               project={project}
               index={index}
+              onOpenLightbox={openGlobalLightbox}
             />
           ))}
         </div>
@@ -56,11 +82,19 @@ export default function Projects() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {regularProjects.map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index} />
+                <ProjectCard key={project.id} project={project} index={index} onOpenLightbox={openGlobalLightbox} />
               ))}
             </div>
           </div>
         )}
+
+        {/* Global Lightbox */}
+        <SimpleLightbox
+          images={globalLightbox.images}
+          isOpen={globalLightbox.isOpen}
+          onClose={closeGlobalLightbox}
+          initialIndex={globalLightbox.currentIndex}
+        />
       </div>
     </section>
   );
@@ -69,9 +103,11 @@ export default function Projects() {
 function FeaturedProjectCard({
   project,
   index,
+  onOpenLightbox,
 }: {
   project: Project;
   index: number;
+  onOpenLightbox: (images: string[], index: number) => void;
 }) {
   const images = project.images || [];
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -90,14 +126,21 @@ function FeaturedProjectCard({
     >
       {/* Featured Badge */}
       <div className="absolute top-4 left-4 z-10">
-        <div className="flex items-center gap-1 px-3 py-1 bg-lienar-to-r from-blue-600 to-cyan-500 text-white text-xs font-semibold rounded-full">
-          <Star className="w-3 h-3" />
-          Featured
+        <div className="flex items-center justify-cemter gap-1 px-3 py-1 bg-lienar-to-r from-blue-600 to-cyan-500 text-white text-xs font-semibold rounded-full">
+          <Star className="w-5 h-5" fill="yellow"/>
+          <p>Featured</p>
         </div>
       </div>
 
       {/* Image Gallery */}
       <div className="relative aspect-video overflow-hidden">
+        {/* Expand Button */}
+        <button
+          onClick={() => onOpenLightbox(images, currentIdx)}
+          className="absolute top-2 right-2 z-10 p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors"
+        >
+          <Maximize2 size={16} />
+        </button>
         <AnimatePresence mode="popLayout">
           <motion.img
             key={currentIdx}
@@ -152,6 +195,7 @@ function FeaturedProjectCard({
         )}
       </div>
 
+
       {/* Content */}
       <div className="p-6">
         <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
@@ -203,7 +247,7 @@ function FeaturedProjectCard({
   );
 }
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+function ProjectCard({ project, index, onOpenLightbox }: { project: Project; index: number; onOpenLightbox: (images: string[], index: number) => void }) {
   const images = project.images || [];
   const [currentIdx, setCurrentIdx] = useState(0);
 
@@ -220,6 +264,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       className="group bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-200/50 dark:border-slate-700/50 hover:-translate-y-1"
     >
       <div className="relative aspect-video overflow-hidden">
+        {/* Expand Button */}
+        <button
+          onClick={() => onOpenLightbox(images, currentIdx)}
+          className="absolute top-2 right-2 z-10 p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors"
+        >
+          <Maximize2 size={14} />
+        </button>
         <AnimatePresence mode="popLayout">
           <motion.img
             key={currentIdx}

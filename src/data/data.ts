@@ -73,7 +73,7 @@ export const portfolioData = {
           level: "Intermedia",
           keywords: ["Unit Testing", "Integration Testing", "Mocking"],
         },
-      ]
+      ],
     },
     {
       category: "Backend",
@@ -103,7 +103,7 @@ export const portfolioData = {
           level: "Intermedia",
           keywords: ["Unit Testing", "Fixtures", "Assertions"],
         },
-      ]
+      ],
     },
     {
       category: "Tools & Databases",
@@ -143,7 +143,7 @@ export const portfolioData = {
           level: "Intermedia",
           keywords: ["UI Design", "Prototyping", "Collaboration"],
         },
-      ]
+      ],
     },
     {
       category: "DevOps & Cloud",
@@ -173,7 +173,7 @@ export const portfolioData = {
           level: "Básica",
           keywords: ["EC2", "S3", "Cloud Services"],
         },
-      ]
+      ],
     },
   ],
   experience: [
@@ -182,40 +182,67 @@ export const portfolioData = {
       company: "Digital Forensics",
       role: "Forensic Analyst",
       period: "February 2026 - March 2026",
-      description: "Conducted digital forensic analysis to identify and preserve critical electronic evidence for legal proceedings. Performed file integrity verification using cryptographic hashes and algorithms to ensure data authenticity. Demonstrated high-level accountability while managing urgent and high-stakes cases.",
-      type: "freelance"
-    }
+      description:
+        "Conducted digital forensic analysis to identify and preserve critical electronic evidence for legal proceedings. Performed file integrity verification using cryptographic hashes and algorithms to ensure data authenticity. Demonstrated high-level accountability while managing urgent and high-stakes cases.",
+      type: "freelance",
+    },
+    {
+      id: 2,
+      company: "Freelance Development",
+      role: "Full-Stack Developer",
+      period: "2024 - Present",
+      description:
+        "Developed custom web applications for clients using modern technologies including React, Next.js, Node.js, and Python. Implemented responsive designs, RESTful APIs, and database solutions. Managed project timelines and client communications while delivering high-quality, scalable solutions.",
+      type: "freelance",
+    },
+    {
+      id: 3,
+      company: "Personal Projects",
+      role: "Full-Stack Developer & UI/UX Designer",
+      period: "2023 - Present",
+      description:
+        "Designed and developed full-stack applications including project management tools, cryptocurrency tracking APIs, and commercial directories. Created intuitive user interfaces with Tailwind CSS and Figma, implemented secure authentication systems, and deployed applications on Vercel with PostgreSQL and Express.js backends.",
+      type: "freelance",
+    },
   ],
   projects: [
     {
       id: 1,
       title: "Prello - Kanban Project Manager",
-      description: "Developed a full-stack project management application featuring a Kanban-style interface. Implemented secure user authentication and interactive features such as drag-and-drop functionality. Enabled task organization through custom columns, labels, and deadlines.",
+      description:
+        "Developed a full-stack project management application featuring a Kanban-style interface. Implemented secure user authentication and interactive features such as drag-and-drop functionality. Enabled task organization through custom columns, labels, and deadlines.",
       tech: ["Next.js", "Tailwind CSS", "TypeScript", "React", "Vercel"],
       demo: "https://project-manager-pi-three.vercel.app/",
       github: "https://github.com/luucassr/prello",
       featured: true,
-      images: ["/prello1.png", "/prello2.png", "/prello3.png"]
+      images: ["/prello1.png", "/prello2.png", "/prello3.png"],
     },
     {
       id: 2,
       title: "Guía Zona - Commercial Directory",
-      description: "Created a dynamic web platform designed to centralize and increase visibility for local businesses. Designed a management system allowing business owners to register and verify their accounts. Developed an autonomous administration dashboard for managing commercial profiles within the directory.",
+      description:
+        "Created a dynamic web platform designed to centralize and increase visibility for local businesses. Designed a management system allowing business owners to register and verify their accounts. Developed an autonomous administration dashboard for managing commercial profiles within the directory.",
       tech: ["React", "Node.js", "PostgreSQL", "Express.js"],
       demo: "#",
       github: "#",
       featured: false,
-      images: ["/guia_comercial1.png", "/guia_comercial2.png", "/guia_comercial3.png", "/guia_comercial4.png", "/guia_comercial5.png"]
+      images: [
+        "/guia_comercial1.png",
+        "/guia_comercial2.png",
+        "/guia_comercial3.png",
+        "/guia_comercial4.png",
+        "/guia_comercial5.png",
+      ],
     },
     {
       id: 3,
       title: "CryptoPulse",
-      description: "Developed a high-performance API for real-time cryptocurrency tracking. Designed RESTful endpoints focused on asynchronous operations to optimize response times. Integrated external financial data for seamless visualization in user dashboards.",
+      description:
+        "Developed a high-performance API for real-time cryptocurrency tracking. Designed RESTful endpoints focused on asynchronous operations to optimize response times. Integrated external financial data for seamless visualization in user dashboards.",
       tech: ["FastAPI", "Python", "REST APIs", "JWT", "SQLAlchemy"],
       demo: "https://fastapi-cryptopulse.vercel.app/",
       github: "#",
       featured: true,
-<<<<<<< HEAD
       images: [
         "/cryptoPulse1.png",
         "/cryptoPulse2.png",
@@ -227,7 +254,7 @@ export const portfolioData = {
     },
     {
       id: 4,
-      title: "JcRossi WebPage",
+      title: "JcRossi Automotores WebPage",
       description:
         "Created a personal website for JcRossi, featuring a modern design and responsive layout. Implemented interactive elements and optimized for performance with a dashboard to have control over the content.",
       tech: [
@@ -250,9 +277,24 @@ export const portfolioData = {
         "/dadWebpage4.png",
         "/dadWebpage6.png",
       ],
-=======
-      images: ["/cryptoPulse1.png", "/cryptoPulse2.png", "/cryptoPulse3.png", "/cryptoPulse4.png", "/cryptoPulse5.png", "/cryptoPulse6.png"]
->>>>>>> parent of 56a442f (added dadwebpage to projects)
+    },
+    {
+      id: 5,
+      title: "YaMayorista E-Commerse",
+      description:
+        "I architected and developed Ya Mayorista, a production-ready wholesale e-commerce platform designed to digitalize bulk purchasing for the Santa Fe region. Built with a modern full-stack approach using React and Node.js, the application manages a dynamic catalog of thousands of products across multiple categories like cleaning, food, and personal care. I implemented a robust backend with PostgreSQL to handle complex wholesale logic, including bulk pricing structures and merchant-specific account validation. The platform is optimized for performance and high-speed data retrieval, ensuring a seamless experience for commercial clients managing large orders on both mobile and desktop.",
+      tech: ["React", "Node.js", "PostgreSQL", "Supabase", "Typescript"],
+      demo: "",
+      github: "#",
+      featured: false,
+      images: [
+        "/yaMayorista1.png",
+        "/yaMayorista2.png",
+        "/yaMayorista6.png",
+        "/yaMayorista3.png",
+        "/yaMayorista4.png",
+        "/yaMayorista5.png",
+      ],
     },
   ],
   certifications: [
@@ -262,24 +304,24 @@ export const portfolioData = {
       date: "2025",
       description: "Advanced Python Programming Certification",
       url: "https://certificates.cs50.io/589dffe6-75c2-4378-a2d1-28221840db3c.png?size=letter",
-      credential: "Certification"
+      credential: "Certification",
     },
     {
       title: "CS50 X",
-      issuer: "Harvard University", 
+      issuer: "Harvard University",
       date: "2025",
       description: "Computer Science Certification",
       url: "https://certificates.cs50.io/73b360d7-e6bc-480d-987c-181d4f085e4e.png?size=letter",
-      credential: "Certification"
+      credential: "Certification",
     },
     {
       title: "CS50 SQL",
       issuer: "Harvard University",
-      date: "2025", 
+      date: "2025",
       description: "Database Management & SQL Certification",
       url: "https://certificates.cs50.io/903c093e-8608-4cf1-a4d6-494c6e12f11e.png?size=letter",
-      credential: "Certification"
-    }
+      credential: "Certification",
+    },
   ],
   languages: [
     { name: "Español", level: "Native" },
