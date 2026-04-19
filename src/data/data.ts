@@ -181,7 +181,7 @@ export const portfolioData = {
       id: 1,
       company: "Stealth Mode Startup",
       role: "Full-Stack Developer",
-      period: "March 2026 - Present",
+      period: "March 2026 - March 2026",
       description:
         "Currently developing innovative solutions in a stealth mode startup environment. Building cutting-edge web applications with modern technologies while maintaining confidentiality. Contributing to product architecture, implementing scalable backend systems, and creating responsive user interfaces.",
       type: "full-time",
