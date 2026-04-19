@@ -179,6 +179,15 @@ export const portfolioData = {
   experience: [
     {
       id: 1,
+      company: "Stealth Mode Startup",
+      role: "Full-Stack Developer",
+      period: "March 2026 - Present",
+      description:
+        "Currently developing innovative solutions in a stealth mode startup environment. Building cutting-edge web applications with modern technologies while maintaining confidentiality. Contributing to product architecture, implementing scalable backend systems, and creating responsive user interfaces.",
+      type: "full-time",
+    },
+    {
+      id: 2,
       company: "Digital Forensics",
       role: "Forensic Analyst",
       period: "February 2026 - March 2026",
@@ -187,7 +196,7 @@ export const portfolioData = {
       type: "freelance",
     },
     {
-      id: 2,
+      id: 3,
       company: "Freelance Development",
       role: "Full-Stack Developer",
       period: "2024 - Present",
@@ -196,7 +205,7 @@ export const portfolioData = {
       type: "freelance",
     },
     {
-      id: 3,
+      id: 4,
       company: "Personal Projects",
       role: "Full-Stack Developer & UI/UX Designer",
       period: "2023 - Present",
