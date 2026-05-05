@@ -117,7 +117,7 @@ export interface Project {
   title: string;
   description: string;
   tech: string[];
-  github: string;
+  github?: string;
   featured: boolean;
   images: string[];
   demo?: string;
