@@ -18,16 +18,6 @@ export default function Hero() {
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
 
       <div className="max-w-4xl text-center z-10 relative">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-6"
-        >
-          <span className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold mb-4">
-            Available for freelance work
-          </span>
-        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -49,16 +39,11 @@ export default function Hero() {
           <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-cyan-500">
             {portfolioData.personal.role}
           </span>
+          <br />
+          <span className="text-lg md:text-xl text-blue-600 dark:text-blue-400 font-medium mt-2 inline-block">
+            Systems Engineering Student • 2nd Year
+          </span>
         </motion.h1>
-        
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed"
-        >
-          {portfolioData.personal.bio}
-        </motion.p>
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -68,7 +53,7 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="group relative inline-flex items-center justify-center px-8 py-4 font-medium text-white rounded-full bg-linear-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            className="group relative inline-flex items-center justify-center px-8 py-4 font-medium text-white rounded-full bg-linear-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg"
           >
             View My Projects
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -77,7 +62,7 @@ export default function Hero() {
           <a
             href="./cv-en-final.pdf"
             download="Lucas_Rossi_CV_EN.pdf"
-            className="group inline-flex items-center justify-center px-8 py-4 font-medium rounded-full border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105"
+            className="group inline-flex items-center justify-center px-8 py-4 font-medium rounded-full border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
           >
             <Download className="w-4 h-4 mr-2" />
             Download CV

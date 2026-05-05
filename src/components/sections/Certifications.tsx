@@ -8,7 +8,7 @@ export default function Certifications() {
   }
 
   return (
-    <section id="certifications" className="py-24 px-6 bg-gradient-to-b from-white to-blue-50/30 dark:from-slate-900 dark:to-blue-900/20">
+    <section id="certifications" className="py-24 px-6 bg-linear-to-b from-white to-blue-50/30 dark:from-slate-900 dark:to-blue-900/20">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,11 +23,11 @@ export default function Certifications() {
             </span>
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Harvard CS50 certifications that validate my expertise in computer science and programming.
+            Additional learning certifications that complement my practical experience and project work.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {portfolioData.certifications.map((cert, index) => (
             <motion.div
               key={index}
@@ -36,35 +36,35 @@ export default function Certifications() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="group bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200/50 dark:border-slate-700/50 relative overflow-hidden"
+              className="group bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-slate-200/30 dark:border-slate-700/30 relative overflow-hidden"
             >
               {/* Background Gradient */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100 dark:bg-blue-900/20 rounded-full blur-3xl opacity-50 group-hover:opacity-70 transition-opacity"></div>
+              <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 dark:bg-blue-900/10 rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
               
-              {/* Harvard Badge */}
-              <div className="flex items-center justify-center w-16 h-16 bg-linear-to-r from-red-600 to-red-700 rounded-full mb-6 relative z-10">
-                <Award className="w-8 h-8 text-white" />
+              {/* Badge */}
+              <div className="flex items-center justify-center w-12 h-12 bg-linear-to-r from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-600 rounded-lg mb-4 relative z-10">
+                <Award className="w-6 h-6 text-slate-600 dark:text-slate-300" />
               </div>
 
               {/* Content */}
               <div className="relative z-10">
-                <div className="text-sm font-semibold text-red-600 dark:text-red-400 mb-2">
+                <div className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2">
                   {cert.issuer}
                 </div>
                 
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {cert.title}
                 </h3>
                 
-                <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 mb-4">
-                  <span className="font-medium">{cert.date}</span>
+                <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-3">
+                  <span>{cert.date}</span>
                   <span>·</span>
-                  <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-semibold">
+                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded text-xs font-medium">
                     {cert.credential}
                   </span>
                 </div>
                 
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
                   {cert.description}
                 </p>
 
@@ -73,10 +73,10 @@ export default function Certifications() {
                   href={cert.url || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors group"
+                  className="inline-flex items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm font-medium transition-colors group"
                 >
                   View Certificate
-                  <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                 </a>
               </div>
             </motion.div>

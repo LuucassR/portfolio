@@ -2,13 +2,13 @@ import { Linkedin, Globe } from "lucide-react";
 
 export const portfolioData = {
   personal: {
-    name: "Lucas David Rossi",
+    name: "Lucas Rossi",
     role: "Junior Full-Stack Developer",
     location: "Santa Fe, Argentina",
     email: "lucassrossi12@gmail.com",
     phone: "(342) 559-4220",
     website: "https://luucassr.github.io/portfolio/",
-    bio: "Junior Full-Stack Developer passionate about building digital products that combine seamless technical functionality with exceptional aesthetics. I specialize in the modern Next.js, React, and TypeScript ecosystem, with the ability to design intuitive interfaces using Tailwind CSS and manage robust backend architectures in Express or FastAPI with PostgreSQL databases.",
+    bio: "Junior Full-Stack Developer passionate about building digital products that combine seamless technical functionality with exceptional aesthetics. I specialize in the modern Next.js, React, and TypeScript ecosystem, with the ability to design intuitive interfaces using Tailwind CSS and manage robust backend architectures in Express or FastAPI with PostgreSQL databases. Currently pursuing my second year of Systems Engineering studies.",
     social: [
       {
         name: "LinkedIn",
@@ -347,7 +347,7 @@ export const content = {
     personal: {
       ...portfolioData.personal,
       role: "Junior Full-Stack Developer",
-      bio: "I am Lucas Rossi, and I am passionate about building digital products that function perfectly and look incredible. My strength lies in Next.js, React, and TypeScript.",
+      bio: "I am Lucas Rossi, and I am passionate about building digital products that function perfectly and look incredible. My strength lies in Next.js, React, and TypeScript. Currently pursuing my second year of Systems Engineering studies.",
     },
   },
 };
