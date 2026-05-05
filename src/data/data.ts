@@ -222,7 +222,6 @@ export const portfolioData = {
         "Developed a full-stack project management application featuring a Kanban-style interface. Implemented secure user authentication and interactive features such as drag-and-drop functionality. Enabled task organization through custom columns, labels, and deadlines.",
       tech: ["Next.js", "Tailwind CSS", "TypeScript", "React", "Vercel"],
       demo: "https://project-manager-pi-three.vercel.app/",
-      github: "https://github.com/luucassr/prello",
       featured: true,
       images: ["prello1.png", "prello2.png", "prello3.png"],
     },
@@ -293,7 +292,7 @@ export const portfolioData = {
       description:
         "I architected and developed Ya Mayorista, a production-ready wholesale e-commerce platform designed to digitalize bulk purchasing for the Santa Fe region. Built with a modern full-stack approach using React and Node.js, the application manages a dynamic catalog of thousands of products across multiple categories like cleaning, food, and personal care. I implemented a robust backend with PostgreSQL to handle complex wholesale logic, including bulk pricing structures and merchant-specific account validation. The platform is optimized for performance and high-speed data retrieval, ensuring a seamless experience for commercial clients managing large orders on both mobile and desktop.",
       tech: ["React", "Node.js", "PostgreSQL", "Supabase", "Typescript"],
-      demo: "",
+      demo: "https://yamayorista.online/",
       github: "#",
       featured: false,
       images: [
