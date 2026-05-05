@@ -4,7 +4,7 @@ import { portfolioData } from "../data/data";
 export default function SocialSidebar() {
   const githubUrl = "https://github.com/luucassr";
   const linkedinUrl = portfolioData.personal.social.find(s => s.name === "LinkedIn")?.url || "";
-  const cvUrl = "/cv-en-final?.pdf";
+  const cvUrl = "./cv-en-final.pdf";
 
   return (
     <>
