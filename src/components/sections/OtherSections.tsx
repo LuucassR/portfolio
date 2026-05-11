@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { portfolioData } from "../../data/data";
-import { Code2, MonitorPlay, Zap, Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { useLanguage } from "../../hooks/useLanguage";
+import { translations } from "../../data/translations";
+import { Code2, MonitorPlay, Zap, Mail, Phone, MapPin, Linkedin, Github, ArrowRight } from "lucide-react";
 
 interface Service {
   title: string;
@@ -13,7 +15,6 @@ export function SkillsAndServices() {
   return (
     <section id="services" className="py-24 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
-        {/* Skills */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -32,7 +33,6 @@ export function SkillsAndServices() {
           </div>
         </motion.div>
 
-        {/* Services */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -66,6 +66,11 @@ export function SkillsAndServices() {
 }
 
 export function Contact() {
+  const { language } = useLanguage();
+  const t = translations[language].contact;
+  const linkedinUrl = portfolioData.personal.social.find((s) => s.name === "LinkedIn")?.url || "";
+  const githubUrl = "https://github.com/luucassr";
+
   return (
     <section
       id="contact"
@@ -78,20 +83,21 @@ export function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-slate-900 dark:text-white">Let's </span>
+          <span className="text-sm font-mono-custom text-slate-400 dark:text-slate-500 tracking-widest uppercase">
+            {t.sectionNumber}
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
+            <span className="text-slate-900 dark:text-white">{t.title} </span>
             <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-cyan-500">
-              Connect
+              {t.titleAccent}
             </span>
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            I'm always interested in hearing about new opportunities and exciting projects.
-            Feel free to reach out through any of the channels below.
+            {t.subtitle}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -99,46 +105,46 @@ export function Contact() {
             className="space-y-6"
           >
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
-              Get in Touch
+              {t.getInTouch}
             </h3>
-            
+
             <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200/50 dark:border-slate-700/50 hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center shrink-0">
+              <a
+                href={`mailto:${portfolioData.personal.email}`}
+                className="flex items-center gap-4 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200/50 dark:border-slate-700/50 hover:shadow-md transition-all hover:border-blue-300 dark:hover:border-blue-700 group"
+              >
+                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                   <Mail className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">Email</p>
-                  <a 
-                    href={`mailto:${portfolioData.personal.email}`}
-                    className="text-slate-900 dark:text-white font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                  >
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">{t.email}</p>
+                  <p className="text-slate-900 dark:text-white font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {portfolioData.personal.email}
-                  </a>
+                  </p>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-4 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200/50 dark:border-slate-700/50 hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center shrink-0">
+              <a
+                href={`tel:${portfolioData.personal.phone}`}
+                className="flex items-center gap-4 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200/50 dark:border-slate-700/50 hover:shadow-md transition-all hover:border-green-300 dark:hover:border-green-700 group"
+              >
+                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                   <Phone className="w-6 h-6 text-green-600 dark:text-green-400" />
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">Phone</p>
-                  <a 
-                    href={`tel:${portfolioData.personal.phone}`}
-                    className="text-slate-900 dark:text-white font-medium hover:text-green-600 dark:hover:text-green-400 transition-colors"
-                  >
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">{t.phone}</p>
+                  <p className="text-slate-900 dark:text-white font-medium group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
                     {portfolioData.personal.phone}
-                  </a>
+                  </p>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-4 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200/50 dark:border-slate-700/50 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-4 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200/50 dark:border-slate-700/50">
                 <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center shrink-0">
                   <MapPin className="w-6 h-6 text-purple-600 dark:text-purple-400" />
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">Location</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">{t.location}</p>
                   <p className="text-slate-900 dark:text-white font-medium">
                     {portfolioData.personal.location}
                   </p>
@@ -147,7 +153,6 @@ export function Contact() {
             </div>
           </motion.div>
 
-          {/* Professional Profile & Social */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -155,9 +160,9 @@ export function Contact() {
             className="space-y-6"
           >
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
-              Professional Profile
+              {t.profile}
             </h3>
-            
+
             <div className="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200/50 dark:border-slate-700/50">
               <div className="mb-6">
                 <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
@@ -172,28 +177,46 @@ export function Contact() {
               </div>
 
               <div className="border-t border-slate-200 dark:border-slate-700 pt-4">
-                <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
-                  Connect with me professionally:
+                <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-4">
+                  {t.connect}
                 </p>
                 <div className="flex flex-wrap gap-3">
-                      <a
-                        key={portfolioData.personal.social[0].name}
-                        href={portfolioData.personal.social[0].url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-700 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-300 hover:text-blue-700 dark:hover:text-blue-300 rounded-lg transition-colors"
-                      >
-                        <Linkedin className="w-6 h-6" />
-                        <span className="text-sm font-medium">{portfolioData.personal.social[0].name}</span>
-                      </a>
+                  <a
+                    href={linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-100 dark:bg-slate-700 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-300 hover:text-blue-700 dark:hover:text-blue-300 rounded-lg transition-all hover:scale-105"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                    <span className="text-sm font-medium">LinkedIn</span>
+                  </a>
+                  <a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-lg transition-all hover:scale-105"
+                  >
+                    <Github className="w-5 h-5" />
+                    <span className="text-sm font-medium">GitHub</span>
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div className="p-4 bg-linear-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl border border-blue-200/50 dark:border-blue-700/50">
-              <p className="text-sm text-slate-700 dark:text-slate-300 text-center">
-                <span className="font-semibold">Currently available</span> for freelance projects and full-time opportunities
+            <div className="p-6 bg-linear-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl border border-blue-200/50 dark:border-blue-700/50">
+              <p className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2">
+                {t.readyCta}
               </p>
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                {t.availability}
+              </p>
+              <a
+                href={`mailto:${portfolioData.personal.email}`}
+                className="inline-flex items-center gap-2 mt-4 px-5 py-2.5 bg-linear-to-r from-blue-600 to-cyan-500 text-white rounded-lg hover:from-blue-700 hover:to-cyan-600 transition-all text-sm font-medium hover:scale-105"
+              >
+                {t.sendEmail}
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </motion.div>
         </div>

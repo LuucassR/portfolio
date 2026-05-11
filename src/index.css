@@ -9,6 +9,7 @@
   --text-tertiary: #94a3b8;
   --accent-primary: #3b82f6;
   --accent-secondary: #06b6d4;
+  --accent-tertiary: #8b5cf6;
   --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
   --border-color: rgba(59, 130, 246, 0.2);
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -26,6 +27,7 @@
   --text-tertiary: #94a3b8;
   --accent-primary: #60a5fa;
   --accent-secondary: #22d3ee;
+  --accent-tertiary: #a78bfa;
   --accent-gradient: linear-gradient(135deg, #60a5fa 0%, #22d3ee 100%);
   --border-color: rgba(96, 165, 250, 0.2);
 }
@@ -34,32 +36,72 @@
   .glass {
     @apply bg-white/80 backdrop-blur-md border border-slate-200/50 shadow-sm;
   }
-  
+
   [data-theme="dark"] .glass {
     @apply bg-slate-900/80 border-slate-700/50;
   }
-  
+
   .glass-card {
     @apply bg-white border border-slate-200/50 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
   }
-  
+
   [data-theme="dark"] .glass-card {
     @apply bg-slate-900 border-slate-700/50;
   }
-  
+
   .gradient-text {
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
   .gradient-border {
     background: var(--accent-gradient);
     padding: 1px;
   }
-  
+
   .hover-lift {
     @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
   }
+}
+
+@keyframes glitch-1 {
+  0%, 100% { clip-path: inset(0 0 0 0); }
+  20% { clip-path: inset(20% 0 60% 0); }
+  40% { clip-path: inset(40% 0 40% 0); }
+  60% { clip-path: inset(60% 0 20% 0); }
+  80% { clip-path: inset(80% 0 5% 0); }
+}
+
+@keyframes glitch-2 {
+  0%, 100% { clip-path: inset(0 0 0 0); }
+  20% { clip-path: inset(10% 0 70% 0); }
+  40% { clip-path: inset(50% 0 30% 0); }
+  60% { clip-path: inset(30% 0 50% 0); }
+  80% { clip-path: inset(70% 0 10% 0); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+@keyframes draw-in {
+  from { height: 0; }
+  to { height: 100%; }
+}
+
+@keyframes slide-underline {
+  from { width: 0; left: 0; }
+  to { width: 100%; left: 0; }
+}
+
+.font-mono-custom {
+  font-family: 'JetBrains Mono', monospace;
 }

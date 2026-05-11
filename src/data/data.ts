@@ -3,12 +3,12 @@ import { Linkedin, Globe } from "lucide-react";
 export const portfolioData = {
   personal: {
     name: "Lucas Rossi",
-    role: "Junior Full-Stack Developer",
+      role: "Full-Stack Developer",
     location: "Santa Fe, Argentina",
     email: "lucassrossi12@gmail.com",
     phone: "(342) 559-4220",
     website: "https://luucassr.github.io/portfolio/",
-    bio: "Junior Full-Stack Developer passionate about building digital products that combine seamless technical functionality with exceptional aesthetics. I specialize in the modern Next.js, React, and TypeScript ecosystem, with the ability to design intuitive interfaces using Tailwind CSS and manage robust backend architectures in Express or FastAPI with PostgreSQL databases. Currently pursuing my second year of Systems Engineering studies.",
+    bio: "Full-Stack Developer who ships production-ready web applications from concept to deployment. I specialize in React, Next.js, and TypeScript for the frontend, with Express and FastAPI powering the backend. I bring a security-first mindset from my digital forensics background and a relentless drive to ship fast, clean code.",
     social: [
       {
         name: "LinkedIn",
@@ -224,6 +224,8 @@ export const portfolioData = {
       demo: "https://project-manager-pi-three.vercel.app/",
       github: "https://github.com/luucassr/prello",
       featured: false,
+      metric: "Drag-and-drop project management with 4 board views",
+      buildTime: "Built in 3 weeks",
       images: ["prello1.png", "prello2.png", "prello3.png"],
     },
     {
@@ -235,6 +237,8 @@ export const portfolioData = {
       demo: "#",
       github: "#",
       featured: false,
+      metric: "Directory serving 200+ local business listings",
+      buildTime: "Built in 6 weeks",
       images: [
         "guia_comercial1.png",
         "guia_comercial2.png",
@@ -252,6 +256,8 @@ export const portfolioData = {
       demo: "https://fastapi-cryptopulse.vercel.app/",
       github: "#",
       featured: false,
+      metric: "Real-time API tracking 10,000+ cryptocurrency data points",
+      buildTime: "Built in 2 weeks",
       images: [
         "cryptoPulse1.png",
         "cryptoPulse2.png",
@@ -277,6 +283,8 @@ export const portfolioData = {
       demo: "https://dad-webpage-weld.vercel.app/",
       github: "#",
       featured: true,
+      metric: "CMS-powered dashboard with real-time content management",
+      buildTime: "Built in 3 weeks",
       images: [
         "dadWebpage5.png",
         "dadWebpage7.png",
@@ -294,8 +302,10 @@ export const portfolioData = {
         "I architected and developed Ya Mayorista, a production-ready wholesale e-commerce platform designed to digitalize bulk purchasing for the Santa Fe region. Built with a modern full-stack approach using React and Node.js, the application manages a dynamic catalog of thousands of products across multiple categories like cleaning, food, and personal care. I implemented a robust backend with PostgreSQL to handle complex wholesale logic, including bulk pricing structures and merchant-specific account validation. The platform is optimized for performance and high-speed data retrieval, ensuring a seamless experience for commercial clients managing large orders on both mobile and desktop.",
       tech: ["React", "Node.js", "PostgreSQL", "Supabase", "Typescript"],
       demo: "https://yamayorista.online/",
-      github: "#",
+      github: "https://github.com/luucassr/ya-mayorista",
       featured: true,
+      metric: "E-commerce handling 500+ SKUs with bulk pricing",
+      buildTime: "Built in 2 months",
       images: [
         "yaMayorista1.png",
         "yaMayorista2.png",
@@ -346,7 +356,7 @@ export const content = {
     ...portfolioData,
     personal: {
       ...portfolioData.personal,
-      role: "Junior Full-Stack Developer",
+    role: "Full-Stack Developer",
       bio: "I am Lucas Rossi, and I am passionate about building digital products that function perfectly and look incredible. My strength lies in Next.js, React, and TypeScript. Currently pursuing my second year of Systems Engineering studies.",
     },
   },

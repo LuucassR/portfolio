@@ -121,4 +121,6 @@ export interface Project {
   featured: boolean;
   images: string[];
   demo?: string;
+  metric?: string;
+  buildTime?: string;
 }
