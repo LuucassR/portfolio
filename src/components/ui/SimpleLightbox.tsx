@@ -40,13 +40,13 @@ export function SimpleLightbox({ images, isOpen, onClose, initialIndex = 0 }: Si
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, currentIndex, onClose]);
+  }, [isOpen, currentIndex, onClose, handleNext, handlePrev]);
 
   if (!isOpen) return null;
 
   return (
     <div 
-      className="fixed inset-0 z-[9999] bg-black/80 flex items-center justify-center p-8"
+      className="fixed inset-0 z-999 bg-black/80 flex items-center justify-center p-8"
       onClick={onClose}
     >
       {/* Close Button */}
@@ -87,13 +87,13 @@ export function SimpleLightbox({ images, isOpen, onClose, initialIndex = 0 }: Si
 
       {/* Image */}
       <div 
-        className="relative max-w-5xl max-h-[80vh] w-full h-full flex items-center justify-center"
+        className="relative max-w-5xl max-h-[90vh] w-full h-full flex items-center justify-center"
         onClick={(e) => e.stopPropagation()}
       >
         <img
           src={images[currentIndex]}
           alt={`Image ${currentIndex + 1}`}
-          className="max-w-full max-h-full object-contain"
+          className="max-w-max max-h-full object-contain"
         />
       </div>
 

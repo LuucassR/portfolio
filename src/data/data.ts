@@ -190,7 +190,7 @@ export const portfolioData = {
       id: 2,
       company: "Digital Forensics",
       role: "Forensic Analyst",
-      period: "February 2026 - March 2026",
+      period: "February 2026 - Present",
       description:
         "Conducted digital forensic analysis to identify and preserve critical electronic evidence for legal proceedings. Performed file integrity verification using cryptographic hashes and algorithms to ensure data authenticity. Demonstrated high-level accountability while managing urgent and high-stakes cases.",
       type: "freelance",
@@ -223,7 +223,7 @@ export const portfolioData = {
       tech: ["Next.js", "Tailwind CSS", "TypeScript", "React", "Vercel"],
       demo: "https://project-manager-pi-three.vercel.app/",
       github: "https://github.com/luucassr/prello",
-      featured: true,
+      featured: false,
       images: ["prello1.png", "prello2.png", "prello3.png"],
     },
     {
@@ -251,7 +251,7 @@ export const portfolioData = {
       tech: ["FastAPI", "Python", "REST APIs", "JWT", "SQLAlchemy"],
       demo: "https://fastapi-cryptopulse.vercel.app/",
       github: "#",
-      featured: true,
+      featured: false,
       images: [
         "cryptoPulse1.png",
         "cryptoPulse2.png",
@@ -276,7 +276,7 @@ export const portfolioData = {
       ],
       demo: "https://dad-webpage-weld.vercel.app/",
       github: "#",
-      featured: false,
+      featured: true,
       images: [
         "dadWebpage5.png",
         "dadWebpage7.png",
@@ -293,9 +293,9 @@ export const portfolioData = {
       description:
         "I architected and developed Ya Mayorista, a production-ready wholesale e-commerce platform designed to digitalize bulk purchasing for the Santa Fe region. Built with a modern full-stack approach using React and Node.js, the application manages a dynamic catalog of thousands of products across multiple categories like cleaning, food, and personal care. I implemented a robust backend with PostgreSQL to handle complex wholesale logic, including bulk pricing structures and merchant-specific account validation. The platform is optimized for performance and high-speed data retrieval, ensuring a seamless experience for commercial clients managing large orders on both mobile and desktop.",
       tech: ["React", "Node.js", "PostgreSQL", "Supabase", "Typescript"],
-      demo: "",
+      demo: "https://yamayorista.online/",
       github: "#",
-      featured: false,
+      featured: true,
       images: [
         "yaMayorista1.png",
         "yaMayorista2.png",

@@ -227,8 +227,8 @@ function FeaturedProjectCard({
               rel="noopener noreferrer"
               className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-linear-to-r from-blue-600 to-cyan-500 text-white rounded-lg hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 hover:scale-105"
             >
-              <ExternalLink className="w-4 h-4" />
-              Live Demo
+              <ExternalLink className="w-4 h-4 stroke-3" />
+              <p className="font-bold">Visit Site</p>
             </a>
           )}
           {project.github && project.github !== "#" && (
