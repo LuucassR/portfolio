@@ -8,7 +8,7 @@ export default function ScrollProgress() {
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1 z-50">
         <div
-          className="h-full bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400 transition-all duration-150 ease-out"
+          className="h-full bg-linear-to-r from-blue-600 via-cyan-500 to-blue-400 transition-all duration-150 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>

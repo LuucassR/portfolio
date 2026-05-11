@@ -33,7 +33,7 @@ export default function Experience() {
   }
 
   return (
-    <section id="experience" className="py-24 px-6 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
+    <section id="experience" className="py-24 px-6 bg-linear-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export default function Experience() {
 
         <div className="relative" ref={timelineRef}>
           <div
-            className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-0.5 bg-gradient-to-b from-blue-600 to-cyan-500 transition-all duration-[1500ms] ease-out"
+            className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-0.5 bg-linear-to-b from-blue-600 to-cyan-500 transition-all duration-1500 ease-out"
             style={{ height: drawLine ? "100%" : "0%" }}
           />
 

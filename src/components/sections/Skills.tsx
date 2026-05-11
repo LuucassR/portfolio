@@ -32,39 +32,6 @@ const techIcons: Record<string, string | React.ReactElement> = {
   "AWS": <ArchitectureServiceAmazonEC2 />,
 };
 
-const levelPercent: Record<string, number> = {
-  "Básica": 25,
-  "Intermedia": 50,
-  "Avanzada": 75,
-  "Experto": 100,
-};
-
-function SkillProgressBar({ level, inView }: { level: string; inView: boolean }) {
-  const percent = levelPercent[level] || 50;
-  const colorClass =
-    percent <= 25
-      ? "bg-amber-500"
-      : percent <= 50
-        ? "bg-blue-500"
-        : percent <= 75
-          ? "bg-cyan-500"
-          : "bg-purple-500";
-
-  return (
-    <div className="w-full mt-3">
-      <div className="flex justify-between text-xs mb-1">
-        <span className="text-slate-500 dark:text-slate-400 font-mono-custom">{level}</span>
-      </div>
-      <div className="h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-        <div
-          className={`h-full rounded-full transition-all duration-1000 ease-out ${colorClass}`}
-          style={{ width: inView ? `${percent}%` : "0%" }}
-        />
-      </div>
-    </div>
-  );
-}
-
 export default function Skills() {
   const { language } = useLanguage();
   const t = translations[language].skills;
@@ -145,7 +112,6 @@ export default function Skills() {
 
 function SkillCard({ skill, index }: { skill: Item; index: number }) {
   const icon = techIcons[skill.name] || "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/code/code-original.svg";
-  const [inView, setInView] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -154,7 +120,6 @@ function SkillCard({ skill, index }: { skill: Item; index: number }) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setInView(true);
           observer.unobserve(el);
         }
       },

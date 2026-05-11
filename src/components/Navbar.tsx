@@ -55,10 +55,10 @@ export default function Navbar() {
             <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-100 text-transparent bg-clip-text bg-linear-to-r from-purple-500 to-pink-500">
               LR.
             </span>
-            <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150 delay-75 text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 translate-x-[2px] -translate-y-[1px]">
+            <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150 delay-75 text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 translate-x-[2px] -translate-y-px">
               LR.
             </span>
-            <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150 delay-[50ms] text-transparent bg-clip-text bg-linear-to-r from-yellow-400 to-red-500 -translate-x-[1px] translate-y-[1px]">
+            <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150 delay-50 text-transparent bg-clip-text bg-linear-to-r from-yellow-400 to-red-500 -translate-x-px translate-y-px">
               LR.
             </span>
           </a>
