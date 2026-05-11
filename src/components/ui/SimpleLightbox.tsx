@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface SimpleLightboxProps {
@@ -9,21 +9,15 @@ interface SimpleLightboxProps {
 }
 
 export function SimpleLightbox({ images, isOpen, onClose, initialIndex = 0 }: SimpleLightboxProps) {
-  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const [currentIndex, setCurrentIndex] = useState(isOpen ? initialIndex : 0);
 
-  useEffect(() => {
-    if (isOpen) {
-      setCurrentIndex(initialIndex);
-    }
-  }, [isOpen, initialIndex]);
-
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
-  };
+  }, [images.length]);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
+  }, [images.length]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -40,7 +34,7 @@ export function SimpleLightbox({ images, isOpen, onClose, initialIndex = 0 }: Si
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, currentIndex, onClose, handleNext, handlePrev]);
+  }, [isOpen, onClose, handleNext, handlePrev]);
 
   if (!isOpen) return null;
 

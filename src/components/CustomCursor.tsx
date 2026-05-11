@@ -3,7 +3,7 @@ import { useEffect, useState, useCallback } from 'react'
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [isPointer, setIsPointer] = useState(false)
-  const [isVisible, setIsVisible] = useState(false)
+  const isVisible = true
 
   const updatePosition = useCallback((e: MouseEvent) => {
     setPosition({ x: e.clientX, y: e.clientY })
@@ -18,7 +18,6 @@ export default function CustomCursor() {
   useEffect(() => {
     document.addEventListener('mousemove', updatePosition)
     document.addEventListener('mouseover', updateCursorType)
-    setIsVisible(true)
 
     return () => {
       document.removeEventListener('mousemove', updatePosition)
