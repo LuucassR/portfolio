@@ -30,7 +30,6 @@ export default function Projects() {
   }
 
   const featured = portfolioData.projects.filter((p) => p.featured);
-  const regular = portfolioData.projects.filter((p) => !p.featured);
 
   return (
     <section
@@ -70,27 +69,6 @@ export default function Projects() {
                 t={t}
               />
             ))}
-          </div>
-        )}
-
-        {regular.length > 0 && (
-          <div>
-            <h3 className="text-xl font-bold mb-8 text-slate-900 dark:text-white flex items-center gap-2">
-              <span className="w-1.5 h-6 bg-blue-500 rounded-full inline-block" />
-              {t.otherTitle}
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {regular.map((project, index) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  index={index}
-                  onOpenLightbox={openGlobalLightbox}
-                  featured={false}
-                  t={t}
-                />
-              ))}
-            </div>
           </div>
         )}
 
