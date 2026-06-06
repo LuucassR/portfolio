@@ -280,7 +280,7 @@ export const portfolioData = {
         "Vercel",
         "AWS RDS",
       ],
-      demo: "https://dad-webpage-weld.vercel.app/",
+      demo: "https://jcrossiautomotores.vercel.app/",
       github: "#",
       featured: true,
       metric: "CMS-powered dashboard with real-time content management",
@@ -304,7 +304,7 @@ export const portfolioData = {
       demo: "https://yamayorista.online/",
       github: "https://github.com/Geronimo-code-jpng/YaProyect1",
       featured: true,
-      metric: "E-commerce handling 500+ SKUs with bulk pricing",
+      metric: "E-commerce who handle real-time modifications to products and optimized to load tens of images",
       buildTime: "Built in 2 months",
       images: [
         "yaMayorista1.png",
