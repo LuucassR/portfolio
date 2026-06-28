@@ -5,7 +5,13 @@ import { portfolioData } from "../../data/data";
 import { useLanguage } from "../../hooks/useLanguage";
 import { translations } from "../../data/translations";
 
-function TypewriterText({ text, speed = 40 }: { text: string; speed?: number }) {
+function TypewriterText({
+  text,
+  speed = 40,
+}: {
+  text: string;
+  speed?: number;
+}) {
   const [displayed, setDisplayed] = useState("");
   const [done, setDone] = useState(false);
 
@@ -37,7 +43,8 @@ function TypewriterText({ text, speed = 40 }: { text: string; speed?: number }) 
 function AvatarLR() {
   return (
     <div className="relative w-28 h-28 mx-auto mb-8">
-      <div className="absolute inset-0 rounded-full bg-linear-to-br from-blue-600 via-cyan-400 to-purple-500 animate-spin-slow opacity-80"
+      <div
+        className="absolute inset-0 rounded-full bg-linear-to-br from-blue-600 via-cyan-400 to-purple-500 animate-spin-slow opacity-80"
         style={{ animation: "spin-slow 4s linear infinite", padding: "3px" }}
       >
         <div className="w-full h-full rounded-full bg-slate-900 dark:bg-slate-950" />
@@ -183,7 +190,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="./cv-en-final.pdf"
+            href="./CV.pdf"
             download="Lucas_Rossi_CV_EN.pdf"
             className="group inline-flex items-center justify-center px-8 py-4 font-medium rounded-full border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
           >
@@ -208,7 +215,9 @@ export default function Hero() {
                   {stat.label}
                 </div>
               </div>
-              {i < t.hero.stats.length - 1 && <div className="w-px h-10 bg-slate-300 dark:bg-slate-600" />}
+              {i < t.hero.stats.length - 1 && (
+                <div className="w-px h-10 bg-slate-300 dark:bg-slate-600" />
+              )}
             </div>
           ))}
         </motion.div>

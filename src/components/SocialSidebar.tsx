@@ -3,8 +3,9 @@ import { portfolioData } from "../data/data";
 
 export default function SocialSidebar() {
   const githubUrl = "https://github.com/luucassr";
-  const linkedinUrl = portfolioData.personal.social.find(s => s.name === "LinkedIn")?.url || "";
-  const cvUrl = "./cv-en-final.pdf";
+  const linkedinUrl =
+    portfolioData.personal.social.find((s) => s.name === "LinkedIn")?.url || "";
+  const cvUrl = "./CV.pdf";
 
   return (
     <>
@@ -19,7 +20,7 @@ export default function SocialSidebar() {
         >
           <Github className="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
         </a>
-        
+
         <a
           href={linkedinUrl}
           target="_blank"
@@ -29,7 +30,7 @@ export default function SocialSidebar() {
         >
           <Linkedin className="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
         </a>
-        
+
         <a
           href={cvUrl}
           download="Lucas_Rossi_CV_EN.pdf"
